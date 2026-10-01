@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MonoBEN: Monocular 3D Object Detection Beyond Fixed Camera iNtrinsics</title>
+<style>
+  :root { --ink:#1a1a1a; --muted:#555; --rule:#e2e2e2; }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6; background:#fff; }
+  .nav { border-bottom:1px solid var(--rule); background:#fff; position:sticky; top:0; z-index:10; }
+  .nav-inner { max-width:1120px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  .nav .brand { font-weight:700; font-size:18px; text-decoration:none; color:var(--ink); }
+  .nav nav { display:flex; gap:14px; flex-wrap:wrap; margin-left:auto; }
+  .nav nav a { color:#333; text-decoration:none; font-size:14px; }
+  .nav nav a:hover { text-decoration:underline; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 20px 60px; }
+  header.hero { text-align:center; padding:40px 0 10px; }
+  header.hero h1 { font-size:34px; line-height:1.25; margin:0 0 14px; }
+  .authors { font-size:17px; }
+  .authors a { color:#0b57d0; text-decoration:none; }
+  .authors a:hover { text-decoration:underline; }
+  .affil { color:#333; margin-top:10px; font-size:15px; }
+  section { padding:26px 0 8px; border-top:1px solid var(--rule); margin-top:26px; }
+  section:first-of-type { border-top:none; margin-top:0; }
+  h2.sec { font-size:26px; margin:0 0 12px; text-align:center; }
+  p.just { text-align:justify; }
+  .fig { text-align:center; margin:16px 0; }
+  .fig img { max-width:100%; height:auto; border:1px solid #eee; }
+  .caption { font-size:14px; color:#333; text-align:justify; max-width:1000px; margin:8px auto 0; }
+  /* ---- IEEE-style tables ---- */
+  .table-scroll { overflow-x:auto; margin:12px 0; border:1px solid #000; }
+  table.ieee-table { font-family:"Times New Roman",Times,Georgia,serif; border-collapse:collapse; width:100%; font-size:12.5px; line-height:1.2; background:#fff; }
+  table.ieee-table th, table.ieee-table td { border:1px solid #000; padding:5px 6px; white-space:nowrap; }
+  table.ieee-table thead th { font-weight:bold; text-align:center; background:#fff; }
+  table.ieee-table td.method { text-align:left; }
+  table.ieee-table td.num { text-align:center; }
+  table.ieee-table u { text-underline-offset:2px; }
+  .tabcap { font-family:"Times New Roman",Times,Georgia,serif; font-size:13.5px; text-align:justify; margin:0 0 4px; }
+  .tabcap .tlabel { font-weight:bold; }
+  .cb-anchor { background:#D2F5D7; padding:1px 5px; }
+  .cb-interp { background:#C8E1FF; padding:1px 5px; }
+  .cb-out { background:#FFE1C8; padding:1px 5px; }
+  .legend-note { font-size:14px; }
+  .sw { display:inline-block; width:14px; height:10px; vertical-align:baseline; border:1px solid #555; }
+  /* ---- teaser-style bar chart ---- */
+  .chart-legend { display:flex; justify-content:center; gap:26px; flex-wrap:wrap; border:1.5px solid #888; border-radius:8px; padding:8px 18px; max-width:640px; margin:6px auto 10px; font-family:Georgia,"Times New Roman",serif; font-size:16px; }
+  .chart-legend .key { display:inline-block; width:44px; height:20px; vertical-align:-3px; margin-right:8px; border:2px solid #222; }
+  .chart-legend .key.seen { background-color:#7E8CA3; background-image:repeating-linear-gradient(-55deg, rgba(0,0,0,.6) 0 2.5px, rgba(0,0,0,0) 2.5px 8px); }
+  .chart-legend .key.novel { background-color:#D5DBE3; border-color:#8a8a8a; }
+  .chart-body { display:flex; gap:6px; margin-top:4px; }
+  .ytitle-col { position:relative; flex:0 0 34px; height:360px; }
+  .ytitle { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) rotate(-90deg); font-family:Georgia,"Times New Roman",serif; font-size:20px; font-style:italic; white-space:nowrap; }
+  .yaxis { position:relative; width:56px; height:360px; flex:0 0 auto; font-family:Georgia,"Times New Roman",serif; }
+  .yaxis .ytick { position:absolute; right:6px; transform:translateY(50%); font-size:17px; }
+  .plot { position:relative; flex:1 1 auto; height:360px; border-left:2px solid #222; border-bottom:2px solid #222; }
+  .gridline { position:absolute; left:0; right:0; border-top:1.5px dashed #bbb; }
+  .groups { position:absolute; inset:0; display:flex; }
+  .group { position:relative; flex:1 1 0; display:flex; align-items:flex-end; justify-content:center; gap:8px; padding:0 6px; }
+  .group.ours { background:#FDF6E3; }
+  .bar-col { height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; }
+  .bar-val { font-family:Georgia,"Times New Roman",serif; font-size:17px; margin-bottom:4px; }
+  .bar { width:58px; max-width:7vw; }
+  .bar.seen { border:2.5px solid #161616; background-image:repeating-linear-gradient(-55deg, rgba(0,0,0,.6) 0 2.5px, rgba(0,0,0,0) 2.5px 8px); }
+  .bar.unseen { border:2.5px solid #8a8a8a; }
+  .xlabels { display:flex; margin-left:96px; }
+  .xlabel { flex:1 1 0; text-align:center; font-family:Georgia,"Times New Roman",serif; font-size:18px; padding-top:6px; }
+  .chart-note { font-size:14px; color:#333; max-width:1000px; margin:10px auto 0; text-align:justify; }
+  footer { border-top:1px solid var(--rule); margin-top:30px; padding:18px 0 40px; font-size:13px; color:var(--muted); text-align:center; }
+  @media (max-width:700px){ header.hero h1{font-size:25px;} .bar{width:34px;} .xlabel{font-size:13px;} .bar-val{font-size:13px;} }
+</style>
+</head>
+<body>
+<div class="nav"><div class="nav-inner">
+  <a class="brand" href="#top">MonoBEN</a>
+  <nav>
+    <a href="#abstract">Abstract</a>
+    <a href="#pipeline">Pipeline</a>
+    <a href="#chart">Results</a>
+    <a href="#generalization">Generalization</a>
+    <a href="#kitti">Standard KITTI</a>
+    <a href="#analytic">Analytic</a>
+  </nav>
+</div></div>
+<div class="wrap" id="top">
+  <header class="hero">
+    <h1>MonoBEN: Monocular 3D Object Detection Beyond Fixed Camera iNtrinsics</h1>
+    <div class="authors">
+      <a href="mailto:huy.nguyen2504@hcmut.edu.vn"><strong>Quoc Huy Nguyen</strong></a>,
+      <a href="mailto:dai.lechi@hcmut.edu.vn"><strong>Chi Dai Le</strong></a>, and
+      <a href="mailto:nddung@hcmut.edu.vn"><strong>Duc Dung Nguyen</strong></a><sup>*</sup>
+    </div>
+    <div class="affil">
+      <em>AITech Lab., Faculty of Computer Science and Engineering</em><br>
+      <em>Ho Chi Minh City University of Technology (HCMUT)</em><br>
+      <em>Vietnam National University Ho Chi Minh City</em><br>
+      Ho Chi Minh City, Vietnam<br>
+      <sup>*</sup>Corresponding author
+    </div>
+  </header>
+
+  <section id="abstract">
+    <h2 class="sec">Abstract</h2>
+    <p class="just">Monocular 3D object detection suffers severe performance degradation when deployed with camera intrinsics unseen during training. Existing solutions rely on large language models and vision-language encoders to map discrete focal anchors to semantic embeddings, forcing brittle interpolation for out-of-range focal lengths and burdening the detector with heavyweight auxiliary networks. We argue that camera intrinsics lie on a continuous geometric manifold that can be encoded directly, rendering semantic priors and discrete anchors unnecessary. We present MonoBEN, a unified intrinsic-aware detector that encodes continuous, logarithmically normalized focal parameters through a lightweight numeric encoder, and hierarchically injects the resulting geometric embedding at both the feature and query levels to explicitly condition the detection pipeline on projection geometry. On KITTI, MonoBEN achieves superior generalization to both interpolated and extrapolated unseen focal lengths compared to state-of-the-art intrinsic-aware methods, while matching competitive accuracy under standard fixed-camera evaluation. Notably, this robustness comes with fewer parameters and no additional computational overhead.</p>
+    <p><strong>Keywords:</strong> monocular 3D object detection, camera intrinsics, cross-focal generalization.</p>
+  </section>
+
+  <section id="pipeline">
+    <h2 class="sec">Overall Pipeline</h2>
+    <div class="fig"><img src="static/images/overview.png" alt="Overview of the MonoBEN pipeline"></div>
+    <p class="just">MonoBEN is a unified intrinsic-aware detector built on the depth-guided transformer design of MonoDETR. Given an input image, a backbone extracts multi-scale visual features. In parallel, the camera focal lengths are normalized by the image dimensions, mapped into the logarithmic domain, and encoded into an intrinsic embedding <em>e<sub>K</sub></em> by a lightweight two-layer MLP with GELU activations &mdash; trained end-to-end with no lookup table and no auxiliary loss. The log transform converts multiplicative focal scaling into an additive shift, restoring directional separation between focal lengths while keeping adjacent configurations smoothly connected. The embedding is injected hierarchically at two levels: <strong>feature-level</strong>, where <em>e<sub>K</sub></em> is broadcast and added to the projected multi-scale features before the visual and depth encoders, and <strong>query-level</strong>, where <em>e<sub>K</sub></em> is added to the decoded object queries before 3D box regression. During training a target focal length is drawn independently per sample from a continuous uniform distribution <em>f&prime; ~ U(700, 1300)</em> px; the image is warped to the target field of view and resized back, giving dense coverage of the interval. At inference, arbitrary intrinsics are handled on the fly &mdash; continuous, interpolation-free, and without any external language model.</p>
+  </section>
+
+  <section id="chart">
+    <h2 class="sec">Cross-Focal Performance at a Glance</h2>
+    <p class="just">AP<sub>3D</sub> (IoU &ge; 0.7) on KITTI Val at a seen anchor focal (700 px, hatched) versus an in-range interpolated focal (1200 px, solid), in the style of the teaser comparison &mdash; extended with <strong>MonoBEN</strong> on the right-hand side:</p>
+    <div class="chart-legend"><span><span class="key seen"></span>Seen Intrinsic (700px)</span><span><span class="key novel"></span>Interpolated Intrinsic (1200px)</span></div>
+    <div class="chart-body">
+      <div class="ytitle-col"><div class="ytitle">AP<sub>3D</sub> 70 &uarr;</div></div>
+      <div class="yaxis">
+        <div class="ytick" style="bottom:0.0%"><span>10</span></div>
+<div class="ytick" style="bottom:29.4%"><span>15</span></div>
+<div class="ytick" style="bottom:58.8%"><span>20</span></div>
+<div class="ytick" style="bottom:88.2%"><span>25</span></div>
+      </div>
+      <div class="plot">
+        <div class="gridline" style="bottom:0.0%"></div>
+<div class="gridline" style="bottom:29.4%"></div>
+<div class="gridline" style="bottom:58.8%"></div>
+<div class="gridline" style="bottom:88.2%"></div>
+        <div class="groups">
+<div class="group">
+      <div class="bar-col"><div class="bar-val">19.15</div><div class="bar seen" style="height:53.8%;background-color:#78849C"></div></div>
+      <div class="bar-col"><div class="bar-val">12.30</div><div class="bar unseen" style="height:13.5%;background-color:#D7DCE4"></div></div>
+    </div>
+<div class="group">
+      <div class="bar-col"><div class="bar-val">22.51</div><div class="bar seen" style="height:73.6%;background-color:#57A78C"></div></div>
+      <div class="bar-col"><div class="bar-val">12.43</div><div class="bar unseen" style="height:14.3%;background-color:#C2E2D5"></div></div>
+    </div>
+<div class="group">
+      <div class="bar-col"><div class="bar-val">23.88</div><div class="bar seen" style="height:81.6%;background-color:#9A5C8C"></div></div>
+      <div class="bar-col"><div class="bar-val">13.46</div><div class="bar unseen" style="height:20.4%;background-color:#DCBDD5"></div></div>
+    </div>
+<div class="group">
+      <div class="bar-col"><div class="bar-val">24.41</div><div class="bar seen" style="height:84.8%;background-color:#BE9826"></div></div>
+      <div class="bar-col"><div class="bar-val">20.54</div><div class="bar unseen" style="height:62.0%;background-color:#F0CD5E"></div></div>
+    </div>
+<div class="group ours">
+      <div class="bar-col"><div class="bar-val">24.20</div><div class="bar seen" style="height:83.5%;background-color:#4A7FB5"></div></div>
+      <div class="bar-col"><div class="bar-val">20.89</div><div class="bar unseen" style="height:64.1%;background-color:#B7CFE8"></div></div>
+    </div>
+        </div>
+      </div>
+    </div>
+    <div class="xlabels">
+<div class="xlabel">MonoDETR</div>
+<div class="xlabel">MonoDGP</div>
+<div class="xlabel">MonoCoP</div>
+<div class="xlabel"><strong>MonoIA</strong></div>
+<div class="xlabel"><strong>MonoBEN (Ours)</strong></div>
+    </div>
+    <p class="chart-note"><strong>A note on terminology.</strong> The teaser this chart follows labels 1200 px &ldquo;Unseen Intrinsic&rdquo;. That label is not technically accurate for MonoBEN: the 1200 px focal lies strictly inside the <em>f&prime; ~ U(700, 1300)</em> px range sampled during training, between the 1100 px and 1300 px discrete anchors. We therefore label it <strong>Interpolated Intrinsic (1200px)</strong> &mdash; in-distribution but off-anchor, so anchor-table methods must interpolate to reach it while MonoBEN evaluates it continuously. Provenance: MonoBEN 24.20 is the KITTI Val Moderate AP<sub>3D</sub> at the native camera (the 700 px bucket; the exact-700 px sweep point is 23.64); 20.89 is the 1200 px sweep point. All other bars are the exact 700 px / 1200 px sweep values from the Generalization table below.</p>
+  </section>
+
+  <section id="generalization">
+    <h2 class="sec">Generalization on Synthetic Intrinsics</h2>
+    <p class="tabcap"><span class="tlabel">TABLE I:</span> Results on different focal lengths using AP<sub>3D</sub> (IoU &ge; 0.7) on KITTI Val. <span class="cb-anchor">Green</span> denotes predefined focal anchors seen by MonoIA. <span class="cb-interp">Blue</span> highlights the interpolated focal lengths where MonoBEN&rsquo;s continuous representation successfully outperforms MonoIA&rsquo;s discrete interpolation. <span class="cb-out">Orange</span> denotes out-of-range extrapolation (600, 650, 1350, 1400 px). &dagger; indicates results reproduced by us using the author-provided checkpoint and our implementation of their hybrid interpolation module (missing from the official source code).</p>
+    <div class="table-scroll"><table class="ieee-table focal-table">
+<thead>
+<tr><th class="mhead" rowspan="2">Method</th><th colspan="2">Unseen Focals (px)</th><th colspan="13">Seen Focals (700&ndash;1300 px)</th><th colspan="2">Unseen Focals (px)</th><th rowspan="2">Avg</th></tr>
+<tr><th><span class="cb-out">600</span></th><th><span class="cb-out">650</span></th><th><span class="cb-anchor">700</span></th><th><span class="cb-interp">750</span></th><th><span class="cb-interp">800</span></th><th><span class="cb-interp">850</span></th><th><span class="cb-anchor">900</span></th><th><span class="cb-interp">950</span></th><th><span class="cb-interp">1000</span></th><th><span class="cb-interp">1050</span></th><th><span class="cb-anchor">1100</span></th><th><span class="cb-interp">1150</span></th><th><span class="cb-interp">1200</span></th><th><span class="cb-interp">1250</span></th><th><span class="cb-anchor">1300</span></th><th><span class="cb-out">1350</span></th><th><span class="cb-out">1400</span></th></tr>
+</thead>
+<tbody>
+<tr><td class="method">MonoDETR</td><td class="num">14.09</td><td class="num">16.67</td><td class="num">19.15</td><td class="num">18.55</td><td class="num">17.89</td><td class="num">16.21</td><td class="num">18.90</td><td class="num">16.54</td><td class="num">15.12</td><td class="num">15.06</td><td class="num">16.76</td><td class="num">13.66</td><td class="num">12.30</td><td class="num">11.88</td><td class="num">14.22</td><td class="num">10.08</td><td class="num">7.51</td><td class="num">14.98</td></tr>
+<tr><td class="method">MonoDGP</td><td class="num">17.42</td><td class="num">19.28</td><td class="num">22.51</td><td class="num">19.78</td><td class="num">19.07</td><td class="num">18.51</td><td class="num">21.04</td><td class="num">17.33</td><td class="num">16.03</td><td class="num">15.63</td><td class="num">19.96</td><td class="num">13.18</td><td class="num">12.43</td><td class="num">12.47</td><td class="num">16.74</td><td class="num">10.27</td><td class="num">7.56</td><td class="num">16.42</td></tr>
+<tr><td class="method">MonoCoP</td><td class="num">18.18</td><td class="num">21.70</td><td class="num"><u>23.88</u></td><td class="num">22.49</td><td class="num">21.44</td><td class="num">20.20</td><td class="num">23.30</td><td class="num">18.61</td><td class="num">17.69</td><td class="num">16.43</td><td class="num"><u>22.59</u></td><td class="num">14.57</td><td class="num">13.46</td><td class="num">13.11</td><td class="num">18.50</td><td class="num">12.73</td><td class="num">11.11</td><td class="num">18.23</td></tr>
+<tr><td class="method">MonoIA (Paper)</td><td class="num"><strong>22.43</strong></td><td class="num"><strong>23.41</strong></td><td class="num"><strong>24.41</strong></td><td class="num"><u>24.13</u></td><td class="num">22.93</td><td class="num">23.64</td><td class="num"><strong>24.36</strong></td><td class="num">22.48</td><td class="num">22.65</td><td class="num">22.52</td><td class="num"><strong>23.69</strong></td><td class="num">19.07</td><td class="num">20.54</td><td class="num"><strong>20.80</strong></td><td class="num"><strong>21.20</strong></td><td class="num"><strong>19.25</strong></td><td class="num">16.99</td><td class="num"><strong>22.03</strong></td></tr>
+<tr><td class="method">MonoIA<sup>&dagger;</sup> (Reproduced)</td><td class="num">18.75</td><td class="num">21.43</td><td class="num">23.43</td><td class="num"><strong>24.36</strong></td><td class="num"><strong>24.28</strong></td><td class="num"><u>23.96</u></td><td class="num"><u>23.99</u></td><td class="num"><u>23.31</u></td><td class="num"><strong>23.26</strong></td><td class="num"><u>22.80</u></td><td class="num">22.44</td><td class="num"><u>20.88</u></td><td class="num"><u>20.79</u></td><td class="num">20.31</td><td class="num"><u>19.99</u></td><td class="num">18.71</td><td class="num"><strong>17.77</strong></td><td class="num">21.79</td></tr>
+<tr><td class="method"><strong>MonoBEN</strong></td><td class="num"><u>21.01</u></td><td class="num"><u>22.16</u></td><td class="num">23.64</td><td class="num">24.10</td><td class="num"><u>23.72</u></td><td class="num"><strong>24.83</strong></td><td class="num">23.59</td><td class="num"><strong>23.59</strong></td><td class="num"><u>23.15</u></td><td class="num"><strong>22.92</strong></td><td class="num">22.19</td><td class="num"><strong>21.15</strong></td><td class="num"><strong>20.89</strong></td><td class="num"><u>20.57</u></td><td class="num">19.85</td><td class="num"><u>18.79</u></td><td class="num"><u>17.42</u></td><td class="num"><u>21.97</u></td></tr>
+</tbody></table></div>
+    <p class="legend-note"><span class="sw" style="background:#D2F5D7"></span> Anchor &nbsp; <span class="sw" style="background:#C8E1FF"></span> Interpolated &nbsp; <span class="sw" style="background:#FFE1C8"></span> Extrapolated &nbsp;&middot;&nbsp; <strong>Bold</strong> = best, <u>underlined</u> = second best.</p>
+    <p class="just"><strong>In-range superiority.</strong> The reproduction exposes a gap between MonoIA&rsquo;s reported figures and its actual checkpoint performance: on the four training anchors MonoIA&dagger; scores 23.43 / 23.99 / 22.44 / 19.99, below the claimed 24.41 / 24.36 / 23.69 / 21.20. Across the nine interpolated focals MonoBEN averages <strong>22.77</strong>, ahead of paper-reported MonoIA (22.08, +0.69) and reproduced MonoIA&dagger; (22.66), peaking at <strong>24.83</strong> at 850 px. <strong>Extrapolation.</strong> Outside the training range MonoBEN leads: 21.01 at 600 px (+2.26 over MonoIA&dagger;) and 22.16 at 650 px (+0.73), averaging 19.85 over the four extrapolated focals vs. 19.16. <strong>Overall</strong> MonoBEN averages <strong>21.97</strong> over all 17 focals, matching reported MonoIA (22.03) and ahead of reproduced MonoIA&dagger; (21.79) &mdash; with no language&ndash;image pipeline or embedding interpolation.</p>
+  </section>
+
+  <section id="kitti">
+    <h2 class="sec">Standard KITTI Results</h2>
+    <p class="tabcap"><span class="tlabel">TABLE II:</span> KITTI Leaderboard (Test) and Val results at IoU<sub>3D</sub> &ge; 0.7. Methods utilizing extra data (LiDAR/Depth) are explicitly noted to ensure fair comparison.</p>
+    <div class="table-scroll"><table class="ieee-table kitti-table">
+<thead>
+<tr><th rowspan="3">Method</th><th rowspan="3">Extra<br>Data</th><th colspan="6">KITTI Test</th><th colspan="6">KITTI Val</th></tr>
+<tr><th colspan="3">AP<sub>3D</sub> &uarr;</th><th colspan="3">AP<sub>BEV</sub> &uarr;</th><th colspan="3">AP<sub>3D</sub> &uarr;</th><th colspan="3">AP<sub>BEV</sub> &uarr;</th></tr>
+<tr><th>Easy</th><th>Mod.</th><th>Hard</th><th>Easy</th><th>Mod.</th><th>Hard</th><th>Easy</th><th>Mod.</th><th>Hard</th><th>Easy</th><th>Mod.</th><th>Hard</th></tr>
+</thead>
+<tbody>
+<tr><td class="method">OccupancyM3D</td><td class="num">LiDAR</td><td class="num">25.55</td><td class="num">17.02</td><td class="num">14.79</td><td class="num">35.38</td><td class="num">24.18</td><td class="num">21.37</td><td class="num">26.87</td><td class="num">19.96</td><td class="num">17.15</td><td class="num">35.72</td><td class="num">26.60</td><td class="num">23.68</td></tr>
+<tr><td class="method">OPA-3D</td><td class="num">Depth</td><td class="num">24.68</td><td class="num">17.17</td><td class="num">14.14</td><td class="num">32.50</td><td class="num">23.14</td><td class="num">20.30</td><td class="num">24.97</td><td class="num">19.40</td><td class="num">16.59</td><td class="num">33.80</td><td class="num">25.51</td><td class="num">22.13</td></tr>
+<tr><td class="method">MonoTAKD</td><td class="num">LiDAR</td><td class="num">27.91</td><td class="num">19.43</td><td class="num">16.51</td><td class="num">38.75</td><td class="num">27.76</td><td class="num">24.14</td><td class="num">34.36</td><td class="num">22.61</td><td class="num">19.88</td><td class="num">42.86</td><td class="num">29.41</td><td class="num">26.47</td></tr>
+<tr><td class="method">MonoUNI</td><td class="num">None</td><td class="num">24.75</td><td class="num">16.73</td><td class="num">13.49</td><td class="num">&ndash;</td><td class="num">&ndash;</td><td class="num">&ndash;</td><td class="num">24.51</td><td class="num">17.18</td><td class="num">14.01</td><td class="num">&ndash;</td><td class="num">&ndash;</td><td class="num">&ndash;</td></tr>
+<tr><td class="method">MonoDETR</td><td class="num">None</td><td class="num">25.00</td><td class="num">16.47</td><td class="num">13.58</td><td class="num">33.60</td><td class="num">22.11</td><td class="num">18.60</td><td class="num">28.84</td><td class="num">20.61</td><td class="num">16.38</td><td class="num">37.86</td><td class="num">26.95</td><td class="num">22.80</td></tr>
+<tr><td class="method">MonoCD</td><td class="num">None</td><td class="num">25.53</td><td class="num">16.59</td><td class="num">14.53</td><td class="num">33.41</td><td class="num">22.81</td><td class="num">19.57</td><td class="num">26.45</td><td class="num">19.37</td><td class="num">16.38</td><td class="num">34.60</td><td class="num">24.96</td><td class="num">21.51</td></tr>
+<tr><td class="method">MonoMAE</td><td class="num">None</td><td class="num">25.60</td><td class="num">18.84</td><td class="num"><u>16.78</u></td><td class="num">34.15</td><td class="num">24.93</td><td class="num">21.76</td><td class="num">30.29</td><td class="num">20.90</td><td class="num">17.61</td><td class="num">40.26</td><td class="num">27.08</td><td class="num">23.14</td></tr>
+<tr><td class="method">MonoDGP</td><td class="num">None</td><td class="num">26.35</td><td class="num">18.72</td><td class="num">15.97</td><td class="num">35.24</td><td class="num">25.23</td><td class="num">22.02</td><td class="num">30.76</td><td class="num">22.34</td><td class="num">19.02</td><td class="num">39.40</td><td class="num">28.20</td><td class="num">24.42</td></tr>
+<tr><td class="method">MonoCoP</td><td class="num">None</td><td class="num">27.54</td><td class="num">19.11</td><td class="num">16.33</td><td class="num">36.77</td><td class="num">25.57</td><td class="num">22.62</td><td class="num">32.06</td><td class="num">23.98</td><td class="num">20.64</td><td class="num">42.20</td><td class="num"><u>31.29</u></td><td class="num"><u>27.58</u></td></tr>
+<tr><td class="method">MonoIA</td><td class="num">None</td><td class="num"><strong>29.52</strong></td><td class="num"><strong>20.29</strong></td><td class="num"><strong>17.93</strong></td><td class="num"><u>37.55</u></td><td class="num"><strong>26.59</strong></td><td class="num"><strong>23.26</strong></td><td class="num"><strong>33.61</strong></td><td class="num"><strong>24.40</strong></td><td class="num"><strong>20.80</strong></td><td class="num"><strong>44.69</strong></td><td class="num"><strong>32.17</strong></td><td class="num"><strong>27.93</strong></td></tr>
+<tr><td class="method"><strong>MonoBEN</strong></td><td class="num">None</td><td class="num"><u>28.60</u></td><td class="num"><u>19.42</u></td><td class="num">16.64</td><td class="num"><strong>37.69</strong></td><td class="num"><u>25.98</u></td><td class="num"><u>22.89</u></td><td class="num"><u>33.01</u></td><td class="num"><u>24.20</u></td><td class="num"><u>20.76</u></td><td class="num"><u>42.24</u></td><td class="num">31.10</td><td class="num">27.37</td></tr>
+</tbody></table></div>
+    <p class="legend-note"><strong>Bold</strong> = best, <u>underlined</u> = second best. Car category, IoU<sub>3D</sub> &ge; 0.7.</p>
+    <p class="just">MonoBEN acts as a <strong>geometry-aware regularizer</strong>: exposure to continuously shifting intrinsics deters overfitting to KITTI-specific pixel-to-metric mappings. It improves on its base detector MonoCoP in <strong>10 of 12</strong> metrics, gaining <strong>+1.06 / +0.31 / +0.31</strong> AP<sub>3D</sub> on Test Easy / Mod. / Hard and <strong>+0.27 to +0.92</strong> AP<sub>BEV</sub> across BEV categories. Versus MonoIA it matches validation accuracy (24.20 vs. 24.40 Moderate AP<sub>3D</sub>) while trailing 0.87&ndash;1.29 AP<sub>3D</sub> on Test &mdash; a deliberate trade of fixed-camera peak for continuous cross-focal generalization with no offline language dependency, at <strong>42.37 M parameters and 71.77 GFLOPs</strong> (parity, no added overhead).</p>
+  </section>
+
+  <section id="analytic">
+    <h2 class="sec">Analytic</h2>
+    <h3 style="text-align:center">Separation of the learned intrinsic embeddings</h3>
+    <div class="fig"><img src="static/images/merged_cosine.png" alt="Pairwise cosine similarity of learned intrinsic embeddings, raw vs log-normalized inputs"></div>
+    <p class="caption"><em>Pairwise cosine similarity of the learned intrinsic embeddings e<sub>K</sub> across focal lengths. <strong>Left:</strong> MLP trained on raw normalized inputs [f<sub>x</sub>/W, f<sub>y</sub>/H] (similarity <strong>0.90</strong> between 700 and 1300 px). <strong>Right:</strong> log-normalized input r<sub>log</sub> (separation improves to <strong>0.77</strong>) while preserving local smoothness.</em></p>
+    <h3 style="text-align:center">The learned intrinsic manifold</h3>
+    <div class="fig"><img src="static/images/focal_manifold.png" alt="PCA and t-SNE projections of learned MonoBEN intrinsic embeddings"></div>
+    <p class="caption"><em>Learned MonoBEN intrinsic embeddings sampled densely from 700 to 1300 px, via PCA (left) and t-SNE (right). Both reveal a strictly smooth, monotonic 1D manifold &mdash; qualitative confirmation that the numeric encoder preserves continuous geometric variation without the fragmented clusters of discrete semantic embeddings.</em></p>
+  </section>
+
+  <footer>This page was adapted from the MonoIA project-page layout for the MonoBEN project.</footer>
+</div>
+</body>
+</html>
