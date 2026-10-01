@@ -1,0 +1,6 @@
+# Unpublished paper source -- never publish these to the public repo
+RIVF26_HuyDai/
+*.pdf
+
+# OS noise
+.DS_Store
