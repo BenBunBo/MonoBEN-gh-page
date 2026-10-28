@@ -1,0 +1,26 @@
+\begin{table*}[htbp]
+\centering
+\caption{KITTI Leaderboard (Test) and Val results at IoU$_{3D} \geq 0.7$. Methods utilizing extra data (LiDAR/Depth) are explicitly noted to ensure fair comparison.}
+\label{tab:kitti_main_results}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{l|c|ccc|ccc|ccc|ccc}
+\hline
+\multirow{3}{*}{Method} & \multirow{3}{*}{\shortstack{Extra\\Data}} & \multicolumn{6}{c|}{KITTI Test} & \multicolumn{6}{c}{KITTI Val} \\
+& & \multicolumn{3}{c|}{$AP_{3D}\uparrow$} & \multicolumn{3}{c|}{$AP_{BEV}\uparrow$} & \multicolumn{3}{c|}{$AP_{3D}\uparrow$} & \multicolumn{3}{c}{$AP_{BEV}\uparrow$} \\
+& & Easy & Mod. & Hard & Easy & Mod. & Hard & Easy & Mod. & Hard & Easy & Mod. & Hard \\
+\hline
+OccupancyM3D \cite{peng2024occupancy} & LiDAR & 25.55 & 17.02 & 14.79 & 35.38 & 24.18 & 21.37 & 26.87 & 19.96 & 17.15 & 35.72 & 26.60 & 23.68 \\
+OPA-3D \cite{su2023opa3d} & Depth & 24.68 & 17.17 & 14.14 & 32.50 & 23.14 & 20.30 & 24.97 & 19.40 & 16.59 & 33.80 & 25.51 & 22.13 \\
+MonoTAKD \cite{liu2025monotakd} & LiDAR & 27.91 & 19.43 & 16.51 & 38.75 & 27.76 & 24.14 & 34.36 & 22.61 & 19.88 & 42.86 & 29.41 & 26.47 \\
+\hline
+MonoUNI \cite{jia2023monouni} & None & 24.75 & 16.73 & 13.49 & -- & -- & -- & 24.51 & 17.18 & 14.01 & -- & -- & -- \\
+MonoDETR \cite{zhang2023monodetr} & None & 25.00 & 16.47 & 13.58 & 33.60 & 22.11 & 18.60 & 28.84 & 20.61 & 16.38 & 37.86 & 26.95 & 22.80 \\
+MonoCD \cite{yan2024monocd} & None & 25.53 & 16.59 & 14.53 & 33.41 & 22.81 & 19.57 & 26.45 & 19.37 & 16.38 & 34.60 & 24.96 & 21.51 \\
+MonoMAE \cite{jiang2024monomae} & None & 25.60 & 18.84 & \underline{16.78} & 34.15 & 24.93 & 21.76 & 30.29 & 20.90 & 17.61 & 40.26 & 27.08 & 23.14 \\
+MonoDGP \cite{pu2024monodgp} & None & 26.35 & 18.72 & 15.97 & 35.24 & 25.23 & 22.02 & 30.76 & 22.34 & 19.02 & 39.40 & 28.20 & 24.42 \\
+MonoCoP \cite{zhang2026monocop} & None & 27.54 & 19.11 & 16.33 & 36.77 & 25.57 & 22.62 & 32.06 & 23.98 & 20.64 & 42.20 & \underline{31.29} & \underline{27.58} \\
+MonoIA \cite{zhang2026monoia} & None & \textbf{29.52} & \textbf{20.29} & \textbf{17.93} & \underline{37.55} & \textbf{26.59} & \textbf{23.26} & \textbf{33.61} & \textbf{24.40} & \textbf{20.80} & \textbf{44.69} & \textbf{32.17} & \textbf{27.93} \\
+\textbf{MonoBEN} & None & \underline{28.60} & \underline{19.42} & 16.64 & \textbf{37.69} & \underline{25.98} & \underline{22.89} & \underline{33.01} & \underline{24.20} & \underline{20.76} & \underline{42.24} & 31.10 & 27.37 \\
+\hline
+\end{tabular}}
+\end{table*}

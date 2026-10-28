@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="530" viewBox="0 0 1080 530">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="Times New Roman, Nimbus Roman, Times, serif" font-size="15" fill="#111">
+<path d="M0 1H1080" stroke="#111" stroke-width="1.4"/>
+<text x="8" y="49" text-anchor="start">Method</text>
+<path d="M180 1V529" stroke="#111" stroke-width="0.65"/>
+<text x="216" y="38" text-anchor="middle">Extra</text>
+<text x="216" y="56" text-anchor="middle">Data</text>
+<path d="M252 1V529" stroke="#111" stroke-width="0.65"/>
+<text x="355.5" y="26" text-anchor="middle">KITTI Test</text>
+<text x="355.5" y="45" text-anchor="middle">AP<tspan baseline-shift="sub" font-size="11">3D</tspan> ↑</text>
+<text x="562.5" y="26" text-anchor="middle">KITTI Test</text>
+<text x="562.5" y="45" text-anchor="middle">AP<tspan baseline-shift="sub" font-size="11">BEV</tspan> ↑</text>
+<path d="M459 1V529" stroke="#111" stroke-width="0.65"/>
+<text x="769.5" y="26" text-anchor="middle">KITTI Val</text>
+<text x="769.5" y="45" text-anchor="middle">AP<tspan baseline-shift="sub" font-size="11">3D</tspan> ↑</text>
+<path d="M666 1V529" stroke="#111" stroke-width="0.65"/>
+<text x="976.5" y="26" text-anchor="middle">KITTI Val</text>
+<text x="976.5" y="45" text-anchor="middle">AP<tspan baseline-shift="sub" font-size="11">BEV</tspan> ↑</text>
+<path d="M873 1V529" stroke="#111" stroke-width="0.65"/>
+<path d="M252 54H1080" stroke="#111" stroke-width="0.65"/>
+<text x="286.5" y="77" text-anchor="middle">Easy</text>
+<text x="355.5" y="77" text-anchor="middle">Mod.</text>
+<text x="424.5" y="77" text-anchor="middle">Hard</text>
+<text x="493.5" y="77" text-anchor="middle">Easy</text>
+<text x="562.5" y="77" text-anchor="middle">Mod.</text>
+<text x="631.5" y="77" text-anchor="middle">Hard</text>
+<text x="700.5" y="77" text-anchor="middle">Easy</text>
+<text x="769.5" y="77" text-anchor="middle">Mod.</text>
+<text x="838.5" y="77" text-anchor="middle">Hard</text>
+<text x="907.5" y="77" text-anchor="middle">Easy</text>
+<text x="976.5" y="77" text-anchor="middle">Mod.</text>
+<text x="1045.5" y="77" text-anchor="middle">Hard</text>
+<path d="M0 89H1080" stroke="#111" stroke-width="1"/>
+<text x="8" y="114" text-anchor="start">OccupancyM3D</text>
+<text x="216" y="114" text-anchor="middle">LiDAR</text>
+<text x="286.5" y="114" text-anchor="middle">25.55</text>
+<text x="355.5" y="114" text-anchor="middle">17.02</text>
+<text x="424.5" y="114" text-anchor="middle">14.79</text>
+<text x="493.5" y="114" text-anchor="middle">35.38</text>
+<text x="562.5" y="114" text-anchor="middle">24.18</text>
+<text x="631.5" y="114" text-anchor="middle">21.37</text>
+<text x="700.5" y="114" text-anchor="middle">26.87</text>
+<text x="769.5" y="114" text-anchor="middle">19.96</text>
+<text x="838.5" y="114" text-anchor="middle">17.15</text>
+<text x="907.5" y="114" text-anchor="middle">35.72</text>
+<text x="976.5" y="114" text-anchor="middle">26.60</text>
+<text x="1045.5" y="114" text-anchor="middle">23.68</text>
+<text x="8" y="154" text-anchor="start">OPA-3D</text>
+<text x="216" y="154" text-anchor="middle">Depth</text>
+<text x="286.5" y="154" text-anchor="middle">24.68</text>
+<text x="355.5" y="154" text-anchor="middle">17.17</text>
+<text x="424.5" y="154" text-anchor="middle">14.14</text>
+<text x="493.5" y="154" text-anchor="middle">32.50</text>
+<text x="562.5" y="154" text-anchor="middle">23.14</text>
+<text x="631.5" y="154" text-anchor="middle">20.30</text>
+<text x="700.5" y="154" text-anchor="middle">24.97</text>
+<text x="769.5" y="154" text-anchor="middle">19.40</text>
+<text x="838.5" y="154" text-anchor="middle">16.59</text>
+<text x="907.5" y="154" text-anchor="middle">33.80</text>
+<text x="976.5" y="154" text-anchor="middle">25.51</text>
+<text x="1045.5" y="154" text-anchor="middle">22.13</text>
+<text x="8" y="194" text-anchor="start">MonoTAKD</text>
+<text x="216" y="194" text-anchor="middle">LiDAR</text>
+<text x="286.5" y="194" text-anchor="middle">27.91</text>
+<text x="355.5" y="194" text-anchor="middle">19.43</text>
+<text x="424.5" y="194" text-anchor="middle">16.51</text>
+<text x="493.5" y="194" text-anchor="middle">38.75</text>
+<text x="562.5" y="194" text-anchor="middle">27.76</text>
+<text x="631.5" y="194" text-anchor="middle">24.14</text>
+<text x="700.5" y="194" text-anchor="middle">34.36</text>
+<text x="769.5" y="194" text-anchor="middle">22.61</text>
+<text x="838.5" y="194" text-anchor="middle">19.88</text>
+<text x="907.5" y="194" text-anchor="middle">42.86</text>
+<text x="976.5" y="194" text-anchor="middle">29.41</text>
+<text x="1045.5" y="194" text-anchor="middle">26.47</text>
+<text x="8" y="234" text-anchor="start">MonoUNI</text>
+<text x="216" y="234" text-anchor="middle">None</text>
+<path d="M0 209H1080" stroke="#111" stroke-width="0.65"/>
+<text x="286.5" y="234" text-anchor="middle">24.75</text>
+<text x="355.5" y="234" text-anchor="middle">16.73</text>
+<text x="424.5" y="234" text-anchor="middle">13.49</text>
+<text x="493.5" y="234" text-anchor="middle">–</text>
+<text x="562.5" y="234" text-anchor="middle">–</text>
+<text x="631.5" y="234" text-anchor="middle">–</text>
+<text x="700.5" y="234" text-anchor="middle">24.51</text>
+<text x="769.5" y="234" text-anchor="middle">17.18</text>
+<text x="838.5" y="234" text-anchor="middle">14.01</text>
+<text x="907.5" y="234" text-anchor="middle">–</text>
+<text x="976.5" y="234" text-anchor="middle">–</text>
+<text x="1045.5" y="234" text-anchor="middle">–</text>
+<text x="8" y="274" text-anchor="start">MonoDETR</text>
+<text x="216" y="274" text-anchor="middle">None</text>
+<text x="286.5" y="274" text-anchor="middle">25.00</text>
+<text x="355.5" y="274" text-anchor="middle">16.47</text>
+<text x="424.5" y="274" text-anchor="middle">13.58</text>
+<text x="493.5" y="274" text-anchor="middle">33.60</text>
+<text x="562.5" y="274" text-anchor="middle">22.11</text>
+<text x="631.5" y="274" text-anchor="middle">18.60</text>
+<text x="700.5" y="274" text-anchor="middle">28.84</text>
+<text x="769.5" y="274" text-anchor="middle">20.61</text>
+<text x="838.5" y="274" text-anchor="middle">16.38</text>
+<text x="907.5" y="274" text-anchor="middle">37.86</text>
+<text x="976.5" y="274" text-anchor="middle">26.95</text>
+<text x="1045.5" y="274" text-anchor="middle">22.80</text>
+<text x="8" y="314" text-anchor="start">MonoCD</text>
+<text x="216" y="314" text-anchor="middle">None</text>
+<text x="286.5" y="314" text-anchor="middle">25.53</text>
+<text x="355.5" y="314" text-anchor="middle">16.59</text>
+<text x="424.5" y="314" text-anchor="middle">14.53</text>
+<text x="493.5" y="314" text-anchor="middle">33.41</text>
+<text x="562.5" y="314" text-anchor="middle">22.81</text>
+<text x="631.5" y="314" text-anchor="middle">19.57</text>
+<text x="700.5" y="314" text-anchor="middle">26.45</text>
+<text x="769.5" y="314" text-anchor="middle">19.37</text>
+<text x="838.5" y="314" text-anchor="middle">16.38</text>
+<text x="907.5" y="314" text-anchor="middle">34.60</text>
+<text x="976.5" y="314" text-anchor="middle">24.96</text>
+<text x="1045.5" y="314" text-anchor="middle">21.51</text>
+<text x="8" y="354" text-anchor="start">MonoMAE</text>
+<text x="216" y="354" text-anchor="middle">None</text>
+<text x="286.5" y="354" text-anchor="middle">25.60</text>
+<text x="355.5" y="354" text-anchor="middle">18.84</text>
+<text x="424.5" y="354" text-anchor="middle">16.78</text>
+<path d="M407.625 356.5H441.375" stroke="#111" stroke-width="0.7"/>
+<text x="493.5" y="354" text-anchor="middle">34.15</text>
+<text x="562.5" y="354" text-anchor="middle">24.93</text>
+<text x="631.5" y="354" text-anchor="middle">21.76</text>
+<text x="700.5" y="354" text-anchor="middle">30.29</text>
+<text x="769.5" y="354" text-anchor="middle">20.90</text>
+<text x="838.5" y="354" text-anchor="middle">17.61</text>
+<text x="907.5" y="354" text-anchor="middle">40.26</text>
+<text x="976.5" y="354" text-anchor="middle">27.08</text>
+<text x="1045.5" y="354" text-anchor="middle">23.14</text>
+<text x="8" y="394" text-anchor="start">MonoDGP</text>
+<text x="216" y="394" text-anchor="middle">None</text>
+<text x="286.5" y="394" text-anchor="middle">26.35</text>
+<text x="355.5" y="394" text-anchor="middle">18.72</text>
+<text x="424.5" y="394" text-anchor="middle">15.97</text>
+<text x="493.5" y="394" text-anchor="middle">35.24</text>
+<text x="562.5" y="394" text-anchor="middle">25.23</text>
+<text x="631.5" y="394" text-anchor="middle">22.02</text>
+<text x="700.5" y="394" text-anchor="middle">30.76</text>
+<text x="769.5" y="394" text-anchor="middle">22.34</text>
+<text x="838.5" y="394" text-anchor="middle">19.02</text>
+<text x="907.5" y="394" text-anchor="middle">39.40</text>
+<text x="976.5" y="394" text-anchor="middle">28.20</text>
+<text x="1045.5" y="394" text-anchor="middle">24.42</text>
+<text x="8" y="434" text-anchor="start">MonoCoP</text>
+<text x="216" y="434" text-anchor="middle">None</text>
+<text x="286.5" y="434" text-anchor="middle">27.54</text>
+<text x="355.5" y="434" text-anchor="middle">19.11</text>
+<text x="424.5" y="434" text-anchor="middle">16.33</text>
+<text x="493.5" y="434" text-anchor="middle">36.77</text>
+<text x="562.5" y="434" text-anchor="middle">25.57</text>
+<text x="631.5" y="434" text-anchor="middle">22.62</text>
+<text x="700.5" y="434" text-anchor="middle">32.06</text>
+<text x="769.5" y="434" text-anchor="middle">23.98</text>
+<text x="838.5" y="434" text-anchor="middle">20.64</text>
+<text x="907.5" y="434" text-anchor="middle">42.20</text>
+<text x="976.5" y="434" text-anchor="middle">31.29</text>
+<path d="M959.625 436.5H993.375" stroke="#111" stroke-width="0.7"/>
+<text x="1045.5" y="434" text-anchor="middle">27.58</text>
+<path d="M1028.62 436.5H1062.38" stroke="#111" stroke-width="0.7"/>
+<text x="8" y="474" text-anchor="start">MonoIA</text>
+<text x="216" y="474" text-anchor="middle">None</text>
+<text x="286.5" y="474" text-anchor="middle" font-weight="bold">29.52</text>
+<text x="355.5" y="474" text-anchor="middle" font-weight="bold">20.29</text>
+<text x="424.5" y="474" text-anchor="middle" font-weight="bold">17.93</text>
+<text x="493.5" y="474" text-anchor="middle">37.55</text>
+<path d="M476.625 476.5H510.375" stroke="#111" stroke-width="0.7"/>
+<text x="562.5" y="474" text-anchor="middle" font-weight="bold">26.59</text>
+<text x="631.5" y="474" text-anchor="middle" font-weight="bold">23.26</text>
+<text x="700.5" y="474" text-anchor="middle" font-weight="bold">33.61</text>
+<text x="769.5" y="474" text-anchor="middle" font-weight="bold">24.40</text>
+<text x="838.5" y="474" text-anchor="middle" font-weight="bold">20.80</text>
+<text x="907.5" y="474" text-anchor="middle" font-weight="bold">44.69</text>
+<text x="976.5" y="474" text-anchor="middle" font-weight="bold">32.17</text>
+<text x="1045.5" y="474" text-anchor="middle" font-weight="bold">27.93</text>
+<text x="8" y="514" text-anchor="start" font-weight="bold">MonoBEN</text>
+<text x="216" y="514" text-anchor="middle">None</text>
+<text x="286.5" y="514" text-anchor="middle">28.60</text>
+<path d="M269.625 516.5H303.375" stroke="#111" stroke-width="0.7"/>
+<text x="355.5" y="514" text-anchor="middle">19.42</text>
+<path d="M338.625 516.5H372.375" stroke="#111" stroke-width="0.7"/>
+<text x="424.5" y="514" text-anchor="middle">16.64</text>
+<text x="493.5" y="514" text-anchor="middle" font-weight="bold">37.69</text>
+<text x="562.5" y="514" text-anchor="middle">25.98</text>
+<path d="M545.625 516.5H579.375" stroke="#111" stroke-width="0.7"/>
+<text x="631.5" y="514" text-anchor="middle">22.89</text>
+<path d="M614.625 516.5H648.375" stroke="#111" stroke-width="0.7"/>
+<text x="700.5" y="514" text-anchor="middle">33.01</text>
+<path d="M683.625 516.5H717.375" stroke="#111" stroke-width="0.7"/>
+<text x="769.5" y="514" text-anchor="middle">24.20</text>
+<path d="M752.625 516.5H786.375" stroke="#111" stroke-width="0.7"/>
+<text x="838.5" y="514" text-anchor="middle">20.76</text>
+<path d="M821.625 516.5H855.375" stroke="#111" stroke-width="0.7"/>
+<text x="907.5" y="514" text-anchor="middle">42.24</text>
+<path d="M890.625 516.5H924.375" stroke="#111" stroke-width="0.7"/>
+<text x="976.5" y="514" text-anchor="middle">31.10</text>
+<text x="1045.5" y="514" text-anchor="middle">27.37</text>
+<path d="M0 529H1080" stroke="#111" stroke-width="1.4"/>
+</g></svg>

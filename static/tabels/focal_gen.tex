@@ -1,0 +1,34 @@
+\begin{table*}[!t]
+\centering
+\caption{Results on different focal lengths using $AP_{3D}$ ($IoU \geq 0.7$) on KITTI Val. \colorbox{focalanchor}{Green} denotes predefined focal anchors seen by MonoIA. \colorbox{focalinterp}{Blue} highlights the interpolated focal lengths where MonoBEN's continuous representation successfully outperforms MonoIA's discrete interpolation. \colorbox{focalout}{Orange} denotes out-of-range extrapolation ($600, 650, 1350, 1400$\,px). $\dagger$ indicates results reproduced by us using the author-provided checkpoint and our implementation of their hybrid interpolation module (missing from the official source code).}
+\label{tab:focal_generalization}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{l|cc|ccccccccccccc|cc|c}
+\hline
+\multirow{2}{*}{Method}
+& \multicolumn{2}{c|}{Unseen Focals (px)}
+& \multicolumn{13}{c|}{Seen Focals ($700$--$1300$\,px)}
+& \multicolumn{2}{c|}{Unseen Focals (px)}
+& \multirow{2}{*}{Avg} \\
+& \colorbox{focalout}{600} & \colorbox{focalout}{650} & \colorbox{focalanchor}{700} & \colorbox{focalinterp}{750} & \colorbox{focalinterp}{800} & \colorbox{focalinterp}{850} & \colorbox{focalanchor}{900} & \colorbox{focalinterp}{950} & \colorbox{focalinterp}{1000} & \colorbox{focalinterp}{1050} & \colorbox{focalanchor}{1100} & \colorbox{focalinterp}{1150} & \colorbox{focalinterp}{1200} & \colorbox{focalinterp}{1250} & \colorbox{focalanchor}{1300} & \colorbox{focalout}{1350} & \colorbox{focalout}{1400} & \\
+\hline
+MonoDETR \cite{zhang2023monodetr}
+& 14.09 & 16.67 & 19.15 & 18.55 & 17.89 & 16.21 & 18.90 & 16.54 & 15.12 & 15.06 & 16.76 & 13.66 & 12.30 & 11.88 & 14.22 & 10.08 & 7.51 & 14.98 \\
+
+MonoDGP \cite{pu2024monodgp}
+& 17.42 & 19.28 & 22.51 & 19.78 & 19.07 & 18.51 & 21.04 & 17.33 & 16.03 & 15.63 & 19.96 & 13.18 & 12.43 & 12.47 & 16.74 & 10.27 & 7.56 & 16.42 \\
+
+MonoCoP \cite{zhang2026monocop}
+& 18.18 & 21.70 & \underline{23.88} & 22.49 & 21.44 & 20.20 & 23.30 & 18.61 & 17.69 & 16.43 & \underline{22.59} & 14.57 & 13.46 & 13.11 & 18.50 & 12.73 & 11.11 & 18.23 \\
+
+MonoIA (Paper) \cite{zhang2026monoia}
+& \textbf{22.43} & \textbf{23.41} & \textbf{24.41} & \underline{24.13} & 22.93 & 23.64 & \textbf{24.36} & 22.48 & 22.65 & 22.52 & \textbf{23.69} & 19.07 & 20.54 & \textbf{20.80} & \textbf{21.20} & \textbf{19.25} & 16.99 & \textbf{22.03} \\
+
+MonoIA$^\dagger$ (Reproduced)
+& 18.75 & 21.43 & 23.43 & \textbf{24.36} & \textbf{24.28} & \underline{23.96} & \underline{23.99} & \underline{23.31} & \textbf{23.26} & \underline{22.80} & 22.44 & \underline{20.88} & \underline{20.79} & 20.31 & \underline{19.99} & 18.71 & \textbf{17.77} & 21.79 \\
+
+\textbf{MonoBEN}
+& \underline{21.01} & \underline{22.16} & 23.64 & 24.10 & \underline{23.72} & \textbf{24.83} & 23.59 & \textbf{23.59} & \underline{23.15} & \textbf{22.92} & 22.19 & \textbf{21.15} & \textbf{20.89} & \underline{20.57} & 19.85 & \underline{18.79} & \underline{17.42} & \underline{21.97} \\
+\hline
+\end{tabular}}
+\end{table*}

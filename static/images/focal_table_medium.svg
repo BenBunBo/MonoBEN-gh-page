@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="1042" viewBox="0 0 580 1042">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="Times New Roman, Nimbus Roman, Times, serif" font-size="15" fill="#111">
+<path d="M0 1H580" stroke="#111" stroke-width="1.4"/>
+<text x="8" y="49" text-anchor="start">Method</text>
+<path d="M160 1V329" stroke="#111" stroke-width="0.65"/>
+<text x="220" y="26" text-anchor="middle">Unseen Focals</text>
+<text x="220" y="45" text-anchor="middle">(px)</text>
+<text x="430" y="26" text-anchor="middle">Seen Focals</text>
+<text x="430" y="45" text-anchor="middle">(px)</text>
+<path d="M280 1V329" stroke="#111" stroke-width="0.65"/>
+<path d="M160 54H580" stroke="#111" stroke-width="0.65"/>
+<rect x="168" y="62" width="44" height="20" fill="#ffe1c8"/>
+<text x="190" y="77" text-anchor="middle">600</text>
+<rect x="228" y="62" width="44" height="20" fill="#ffe1c8"/>
+<text x="250" y="77" text-anchor="middle">650</text>
+<rect x="288" y="62" width="44" height="20" fill="#d2f5d7"/>
+<text x="310" y="77" text-anchor="middle">700</text>
+<rect x="348" y="62" width="44" height="20" fill="#c8e1ff"/>
+<text x="370" y="77" text-anchor="middle">750</text>
+<rect x="408" y="62" width="44" height="20" fill="#c8e1ff"/>
+<text x="430" y="77" text-anchor="middle">800</text>
+<rect x="468" y="62" width="44" height="20" fill="#c8e1ff"/>
+<text x="490" y="77" text-anchor="middle">850</text>
+<rect x="528" y="62" width="44" height="20" fill="#d2f5d7"/>
+<text x="550" y="77" text-anchor="middle">900</text>
+<path d="M0 89H580" stroke="#111" stroke-width="1"/>
+<text x="8" y="114" text-anchor="start">MonoDETR</text>
+<text x="190" y="114" text-anchor="middle">14.09</text>
+<text x="250" y="114" text-anchor="middle">16.67</text>
+<text x="310" y="114" text-anchor="middle">19.15</text>
+<text x="370" y="114" text-anchor="middle">18.55</text>
+<text x="430" y="114" text-anchor="middle">17.89</text>
+<text x="490" y="114" text-anchor="middle">16.21</text>
+<text x="550" y="114" text-anchor="middle">18.90</text>
+<text x="8" y="154" text-anchor="start">MonoDGP</text>
+<text x="190" y="154" text-anchor="middle">17.42</text>
+<text x="250" y="154" text-anchor="middle">19.28</text>
+<text x="310" y="154" text-anchor="middle">22.51</text>
+<text x="370" y="154" text-anchor="middle">19.78</text>
+<text x="430" y="154" text-anchor="middle">19.07</text>
+<text x="490" y="154" text-anchor="middle">18.51</text>
+<text x="550" y="154" text-anchor="middle">21.04</text>
+<text x="8" y="194" text-anchor="start">MonoCoP</text>
+<text x="190" y="194" text-anchor="middle">18.18</text>
+<text x="250" y="194" text-anchor="middle">21.70</text>
+<text x="310" y="194" text-anchor="middle">23.88</text>
+<path d="M293.125 196.5H326.875" stroke="#111" stroke-width="0.7"/>
+<text x="370" y="194" text-anchor="middle">22.49</text>
+<text x="430" y="194" text-anchor="middle">21.44</text>
+<text x="490" y="194" text-anchor="middle">20.20</text>
+<text x="550" y="194" text-anchor="middle">23.30</text>
+<text x="8" y="234" text-anchor="start">MonoIA (Paper)</text>
+<text x="190" y="234" text-anchor="middle" font-weight="bold">22.43</text>
+<text x="250" y="234" text-anchor="middle" font-weight="bold">23.41</text>
+<text x="310" y="234" text-anchor="middle" font-weight="bold">24.41</text>
+<text x="370" y="234" text-anchor="middle">24.13</text>
+<path d="M353.125 236.5H386.875" stroke="#111" stroke-width="0.7"/>
+<text x="430" y="234" text-anchor="middle">22.93</text>
+<text x="490" y="234" text-anchor="middle">23.64</text>
+<text x="550" y="234" text-anchor="middle" font-weight="bold">24.36</text>
+<text x="8" y="265" text-anchor="start">MonoIA†</text>
+<text x="8" y="283" text-anchor="start">(Reproduced)</text>
+<text x="190" y="274" text-anchor="middle">18.75</text>
+<text x="250" y="274" text-anchor="middle">21.43</text>
+<text x="310" y="274" text-anchor="middle">23.43</text>
+<text x="370" y="274" text-anchor="middle" font-weight="bold">24.36</text>
+<text x="430" y="274" text-anchor="middle" font-weight="bold">24.28</text>
+<text x="490" y="274" text-anchor="middle">23.96</text>
+<path d="M473.125 276.5H506.875" stroke="#111" stroke-width="0.7"/>
+<text x="550" y="274" text-anchor="middle">23.99</text>
+<path d="M533.125 276.5H566.875" stroke="#111" stroke-width="0.7"/>
+<text x="8" y="314" text-anchor="start" font-weight="bold">MonoBEN</text>
+<text x="190" y="314" text-anchor="middle">21.01</text>
+<path d="M173.125 316.5H206.875" stroke="#111" stroke-width="0.7"/>
+<text x="250" y="314" text-anchor="middle">22.16</text>
+<path d="M233.125 316.5H266.875" stroke="#111" stroke-width="0.7"/>
+<text x="310" y="314" text-anchor="middle">23.64</text>
+<text x="370" y="314" text-anchor="middle">24.10</text>
+<text x="430" y="314" text-anchor="middle">23.72</text>
+<path d="M413.125 316.5H446.875" stroke="#111" stroke-width="0.7"/>
+<text x="490" y="314" text-anchor="middle" font-weight="bold">24.83</text>
+<text x="550" y="314" text-anchor="middle">23.59</text>
+<path d="M0 329H580" stroke="#111" stroke-width="1.4"/>
+<path d="M0 357H580" stroke="#111" stroke-width="1.4"/>
+<text x="8" y="405" text-anchor="start">Method</text>
+<path d="M160 357V685" stroke="#111" stroke-width="0.65"/>
+<text x="370" y="382" text-anchor="middle">Seen Focals</text>
+<text x="370" y="401" text-anchor="middle">(px)</text>
+<path d="M160 410H580" stroke="#111" stroke-width="0.65"/>
+<rect x="168" y="418" width="44" height="20" fill="#c8e1ff"/>
+<text x="190" y="433" text-anchor="middle">950</text>
+<rect x="228" y="418" width="44" height="20" fill="#c8e1ff"/>
+<text x="250" y="433" text-anchor="middle">1000</text>
+<rect x="288" y="418" width="44" height="20" fill="#c8e1ff"/>
+<text x="310" y="433" text-anchor="middle">1050</text>
+<rect x="348" y="418" width="44" height="20" fill="#d2f5d7"/>
+<text x="370" y="433" text-anchor="middle">1100</text>
+<rect x="408" y="418" width="44" height="20" fill="#c8e1ff"/>
+<text x="430" y="433" text-anchor="middle">1150</text>
+<rect x="468" y="418" width="44" height="20" fill="#c8e1ff"/>
+<text x="490" y="433" text-anchor="middle">1200</text>
+<rect x="528" y="418" width="44" height="20" fill="#c8e1ff"/>
+<text x="550" y="433" text-anchor="middle">1250</text>
+<path d="M0 445H580" stroke="#111" stroke-width="1"/>
+<text x="8" y="470" text-anchor="start">MonoDETR</text>
+<text x="190" y="470" text-anchor="middle">16.54</text>
+<text x="250" y="470" text-anchor="middle">15.12</text>
+<text x="310" y="470" text-anchor="middle">15.06</text>
+<text x="370" y="470" text-anchor="middle">16.76</text>
+<text x="430" y="470" text-anchor="middle">13.66</text>
+<text x="490" y="470" text-anchor="middle">12.30</text>
+<text x="550" y="470" text-anchor="middle">11.88</text>
+<text x="8" y="510" text-anchor="start">MonoDGP</text>
+<text x="190" y="510" text-anchor="middle">17.33</text>
+<text x="250" y="510" text-anchor="middle">16.03</text>
+<text x="310" y="510" text-anchor="middle">15.63</text>
+<text x="370" y="510" text-anchor="middle">19.96</text>
+<text x="430" y="510" text-anchor="middle">13.18</text>
+<text x="490" y="510" text-anchor="middle">12.43</text>
+<text x="550" y="510" text-anchor="middle">12.47</text>
+<text x="8" y="550" text-anchor="start">MonoCoP</text>
+<text x="190" y="550" text-anchor="middle">18.61</text>
+<text x="250" y="550" text-anchor="middle">17.69</text>
+<text x="310" y="550" text-anchor="middle">16.43</text>
+<text x="370" y="550" text-anchor="middle">22.59</text>
+<path d="M353.125 552.5H386.875" stroke="#111" stroke-width="0.7"/>
+<text x="430" y="550" text-anchor="middle">14.57</text>
+<text x="490" y="550" text-anchor="middle">13.46</text>
+<text x="550" y="550" text-anchor="middle">13.11</text>
+<text x="8" y="590" text-anchor="start">MonoIA (Paper)</text>
+<text x="190" y="590" text-anchor="middle">22.48</text>
+<text x="250" y="590" text-anchor="middle">22.65</text>
+<text x="310" y="590" text-anchor="middle">22.52</text>
+<text x="370" y="590" text-anchor="middle" font-weight="bold">23.69</text>
+<text x="430" y="590" text-anchor="middle">19.07</text>
+<text x="490" y="590" text-anchor="middle">20.54</text>
+<text x="550" y="590" text-anchor="middle" font-weight="bold">20.80</text>
+<text x="8" y="621" text-anchor="start">MonoIA†</text>
+<text x="8" y="639" text-anchor="start">(Reproduced)</text>
+<text x="190" y="630" text-anchor="middle">23.31</text>
+<path d="M173.125 632.5H206.875" stroke="#111" stroke-width="0.7"/>
+<text x="250" y="630" text-anchor="middle" font-weight="bold">23.26</text>
+<text x="310" y="630" text-anchor="middle">22.80</text>
+<path d="M293.125 632.5H326.875" stroke="#111" stroke-width="0.7"/>
+<text x="370" y="630" text-anchor="middle">22.44</text>
+<text x="430" y="630" text-anchor="middle">20.88</text>
+<path d="M413.125 632.5H446.875" stroke="#111" stroke-width="0.7"/>
+<text x="490" y="630" text-anchor="middle">20.79</text>
+<path d="M473.125 632.5H506.875" stroke="#111" stroke-width="0.7"/>
+<text x="550" y="630" text-anchor="middle">20.31</text>
+<text x="8" y="670" text-anchor="start" font-weight="bold">MonoBEN</text>
+<text x="190" y="670" text-anchor="middle" font-weight="bold">23.59</text>
+<text x="250" y="670" text-anchor="middle">23.15</text>
+<path d="M233.125 672.5H266.875" stroke="#111" stroke-width="0.7"/>
+<text x="310" y="670" text-anchor="middle" font-weight="bold">22.92</text>
+<text x="370" y="670" text-anchor="middle">22.19</text>
+<text x="430" y="670" text-anchor="middle" font-weight="bold">21.15</text>
+<text x="490" y="670" text-anchor="middle" font-weight="bold">20.89</text>
+<text x="550" y="670" text-anchor="middle">20.57</text>
+<path d="M533.125 672.5H566.875" stroke="#111" stroke-width="0.7"/>
+<path d="M0 685H580" stroke="#111" stroke-width="1.4"/>
+<path d="M0 713H580" stroke="#111" stroke-width="1.4"/>
+<text x="8" y="761" text-anchor="start">Method</text>
+<path d="M160 713V1041" stroke="#111" stroke-width="0.65"/>
+<text x="212.5" y="729" text-anchor="middle">Seen</text>
+<text x="212.5" y="746" text-anchor="middle">Focals</text>
+<text x="212.5" y="762" text-anchor="middle">(px)</text>
+<text x="370" y="738" text-anchor="middle">Unseen Focals</text>
+<text x="370" y="757" text-anchor="middle">(px)</text>
+<path d="M265 713V1041" stroke="#111" stroke-width="0.65"/>
+<text x="527.5" y="738" text-anchor="middle">Avg</text>
+<path d="M475 713V1041" stroke="#111" stroke-width="0.65"/>
+<path d="M160 766H580" stroke="#111" stroke-width="0.65"/>
+<rect x="190.5" y="774" width="44" height="20" fill="#d2f5d7"/>
+<text x="212.5" y="789" text-anchor="middle">1300</text>
+<rect x="295.5" y="774" width="44" height="20" fill="#ffe1c8"/>
+<text x="317.5" y="789" text-anchor="middle">1350</text>
+<rect x="400.5" y="774" width="44" height="20" fill="#ffe1c8"/>
+<text x="422.5" y="789" text-anchor="middle">1400</text>
+<text x="527.5" y="789" text-anchor="middle"></text>
+<path d="M0 801H580" stroke="#111" stroke-width="1"/>
+<text x="8" y="826" text-anchor="start">MonoDETR</text>
+<text x="212.5" y="826" text-anchor="middle">14.22</text>
+<text x="317.5" y="826" text-anchor="middle">10.08</text>
+<text x="422.5" y="826" text-anchor="middle">7.51</text>
+<text x="527.5" y="826" text-anchor="middle">14.98</text>
+<text x="8" y="866" text-anchor="start">MonoDGP</text>
+<text x="212.5" y="866" text-anchor="middle">16.74</text>
+<text x="317.5" y="866" text-anchor="middle">10.27</text>
+<text x="422.5" y="866" text-anchor="middle">7.56</text>
+<text x="527.5" y="866" text-anchor="middle">16.42</text>
+<text x="8" y="906" text-anchor="start">MonoCoP</text>
+<text x="212.5" y="906" text-anchor="middle">18.50</text>
+<text x="317.5" y="906" text-anchor="middle">12.73</text>
+<text x="422.5" y="906" text-anchor="middle">11.11</text>
+<text x="527.5" y="906" text-anchor="middle">18.23</text>
+<text x="8" y="946" text-anchor="start">MonoIA (Paper)</text>
+<text x="212.5" y="946" text-anchor="middle" font-weight="bold">21.20</text>
+<text x="317.5" y="946" text-anchor="middle" font-weight="bold">19.25</text>
+<text x="422.5" y="946" text-anchor="middle">16.99</text>
+<text x="527.5" y="946" text-anchor="middle" font-weight="bold">22.03</text>
+<text x="8" y="977" text-anchor="start">MonoIA†</text>
+<text x="8" y="995" text-anchor="start">(Reproduced)</text>
+<text x="212.5" y="986" text-anchor="middle">19.99</text>
+<path d="M195.625 988.5H229.375" stroke="#111" stroke-width="0.7"/>
+<text x="317.5" y="986" text-anchor="middle">18.71</text>
+<text x="422.5" y="986" text-anchor="middle" font-weight="bold">17.77</text>
+<text x="527.5" y="986" text-anchor="middle">21.79</text>
+<text x="8" y="1026" text-anchor="start" font-weight="bold">MonoBEN</text>
+<text x="212.5" y="1026" text-anchor="middle">19.85</text>
+<text x="317.5" y="1026" text-anchor="middle">18.79</text>
+<path d="M300.625 1028.5H334.375" stroke="#111" stroke-width="0.7"/>
+<text x="422.5" y="1026" text-anchor="middle">17.42</text>
+<path d="M405.625 1028.5H439.375" stroke="#111" stroke-width="0.7"/>
+<text x="527.5" y="1026" text-anchor="middle">21.97</text>
+<path d="M510.625 1028.5H544.375" stroke="#111" stroke-width="0.7"/>
+<path d="M0 1041H580" stroke="#111" stroke-width="1.4"/>
+</g></svg>

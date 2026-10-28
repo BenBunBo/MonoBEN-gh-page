@@ -28,14 +28,20 @@
   .fig { text-align:center; margin:16px 0; }
   .fig img { max-width:100%; height:auto; border:1px solid #eee; }
   .caption { font-size:14px; color:#333; text-align:justify; max-width:1000px; margin:8px auto 0; }
-  /* ---- IEEE-style tables ---- */
-  .table-scroll { overflow-x:auto; margin:12px 0; border:1.5px solid #000; }
-  table.ieee-table { font-family:"Times New Roman",Times,Georgia,serif; border-collapse:collapse; width:100%; font-size:15px; line-height:1.25; background:#fff; }
-  table.ieee-table th, table.ieee-table td { border:1.5px solid #000; padding:6px 8px; white-space:nowrap; }
-  table.ieee-table thead th { font-weight:bold; text-align:center; background:#fff; }
-  table.ieee-table td.method { text-align:left; }
-  table.ieee-table td.num { text-align:center; }
-  table.ieee-table u { text-underline-offset:2px; }
+  /* Fixed-size vector tables: narrower screens receive stacked column panels. */
+  .table-figure { margin:12px 0; text-align:center; }
+  .table-figure img { display:block; margin:0 auto; height:auto; }
+  .table-medium, .table-small { display:none !important; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+  .venue { margin:18px 0 8px; font-size:22px; font-weight:700; color:#0b57d0; }
+  @media (max-width:1119px) {
+    .table-wide { display:none !important; }
+    .table-medium { display:block !important; }
+  }
+  @media (max-width:619px) {
+    .table-medium { display:none !important; }
+    .table-small { display:block !important; }
+  }
   .tabcap { font-family:"Times New Roman",Times,Georgia,serif; font-size:15px; text-align:justify; margin:0 0 4px; }
   .tabcap .tlabel { font-weight:bold; }
   .cb-anchor { background:#D2F5D7; padding:1px 5px; }
@@ -43,40 +49,17 @@
   .cb-out { background:#FFE1C8; padding:1px 5px; }
   .legend-note { font-size:14px; }
   .sw { display:inline-block; width:14px; height:10px; vertical-align:baseline; border:1px solid #555; }
-  /* ---- teaser-style bar chart ---- */
-  .chart-legend { display:flex; justify-content:center; gap:26px; flex-wrap:wrap; border:1.5px solid #888; border-radius:8px; padding:8px 18px; max-width:640px; margin:6px auto 10px; font-family:Georgia,"Times New Roman",serif; font-size:16px; }
-  .chart-legend .key { display:inline-block; width:44px; height:20px; vertical-align:-3px; margin-right:8px; border:2px solid #222; }
-  .chart-legend .key.seen { background-color:#7E8CA3; background-image:repeating-linear-gradient(-55deg, rgba(0,0,0,.6) 0 2.5px, rgba(0,0,0,0) 2.5px 8px); }
-  .chart-legend .key.novel { background-color:#D5DBE3; border-color:#8a8a8a; }
-  .chart-body { display:flex; gap:6px; margin-top:4px; }
-  .ytitle-col { position:relative; flex:0 0 34px; height:360px; }
-  .ytitle { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) rotate(-90deg); font-family:Georgia,"Times New Roman",serif; font-size:20px; font-style:italic; white-space:nowrap; }
-  .yaxis { position:relative; width:56px; height:360px; flex:0 0 auto; font-family:Georgia,"Times New Roman",serif; }
-  .yaxis .ytick { position:absolute; right:6px; transform:translateY(50%); font-size:17px; }
-  .plot { position:relative; flex:1 1 auto; height:360px; border-left:2px solid #222; border-bottom:2px solid #222; }
-  .gridline { position:absolute; left:0; right:0; border-top:1.5px dashed #bbb; }
-  .groups { position:absolute; inset:0; display:flex; }
-  .group { position:relative; flex:1 1 0; display:flex; align-items:flex-end; justify-content:center; gap:8px; padding:0 6px; }
-  .group.ours { background:#FDF6E3; }
-  .bar-col { height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; }
-  .bar-val { font-family:Georgia,"Times New Roman",serif; font-size:17px; margin-bottom:4px; }
-  .bar { width:58px; max-width:7vw; }
-  .bar.seen { border:2.5px solid #161616; background-image:repeating-linear-gradient(-55deg, rgba(0,0,0,.6) 0 2.5px, rgba(0,0,0,0) 2.5px 8px); }
-  .bar.unseen { border:2.5px solid #8a8a8a; }
-  .xlabels { display:flex; margin-left:96px; }
-  .xlabel { flex:1 1 0; text-align:center; font-family:Georgia,"Times New Roman",serif; font-size:18px; padding-top:6px; }
-  .chart-note { font-size:14px; color:#333; max-width:1000px; margin:10px auto 0; text-align:justify; }
   footer { border-top:1px solid var(--rule); margin-top:30px; padding:18px 0 40px; font-size:13px; color:var(--muted); text-align:center; }
-  @media (max-width:700px){ header.hero h1{font-size:25px;} .bar{width:34px;} .xlabel{font-size:13px;} .bar-val{font-size:13px;} }
+  @media (max-width:700px){ header.hero h1{font-size:25px;} }
 </style>
 </head>
 <body>
 <div class="nav"><div class="nav-inner">
   <a class="brand" href="#top">MonoBEN</a>
   <nav>
+    <a href="#chart">Results</a>
     <a href="#abstract">Abstract</a>
     <a href="#pipeline">Pipeline</a>
-    <a href="#chart">Results</a>
     <a href="#generalization">Generalization</a>
     <a href="#kitti">Standard KITTI</a>
     <a href="#analytic">Analytic</a>
@@ -97,7 +80,16 @@
       Ho Chi Minh City, Vietnam<br>
       <sup>*</sup>Corresponding author
     </div>
+    <div class="venue">Accepted at RIVF 2026</div>
   </header>
+
+  <section id="chart" aria-labelledby="chart-title">
+    <h2 class="sec" id="chart-title">Cross-Focal Performance at a Glance</h2>
+    <figure class="fig">
+      <img src="static/images/cross_focal_performance.svg" width="1080" height="450" alt="KITTI Val AP3D at 850 px / 1400 px: MonoDETR 16.21 / 7.51; MonoDGP 18.51 / 7.56; MonoCoP 20.20 / 11.11; MonoIA (Paper) 23.64 / 16.99; MonoBEN 24.83 / 17.42.">
+      <figcaption class="caption">AP<sub>3D</sub> (IoU &ge; 0.7) on KITTI Val at <strong>850 px</strong> (seen focal, hatched) and <strong>1400 px</strong> (unseen focal, solid). All values are taken directly from TABLE I; MonoIA uses the paper-reported results. Here, &ldquo;seen&rdquo; refers to MonoBEN&rsquo;s continuous training range of 700&ndash;1300 px: 850 px is an off-anchor interpolation point for MonoIA, while 1400 px is outside the training range.</figcaption>
+    </figure>
+  </section>
 
   <section id="abstract">
     <h2 class="sec">Abstract</h2>
@@ -111,61 +103,15 @@
     <p class="just">MonoBEN is a unified intrinsic-aware detector built on the depth-guided transformer design of MonoDETR. Given an input image, a backbone extracts multi-scale visual features. In parallel, the camera focal lengths are normalized by the image dimensions, mapped into the logarithmic domain, and encoded into an intrinsic embedding <em>e<sub>K</sub></em> by a lightweight two-layer MLP with GELU activations &mdash; trained end-to-end with no lookup table and no auxiliary loss. The log transform converts multiplicative focal scaling into an additive shift, restoring directional separation between focal lengths while keeping adjacent configurations smoothly connected. The embedding is injected hierarchically at two levels: <strong>feature-level</strong>, where <em>e<sub>K</sub></em> is broadcast and added to the projected multi-scale features before the visual and depth encoders, and <strong>query-level</strong>, where <em>e<sub>K</sub></em> is added to the decoded object queries before 3D box regression. During training a target focal length is drawn independently per sample from a continuous uniform distribution <em>f&prime; ~ U(700, 1300)</em> px; the image is warped to the target field of view and resized back, giving dense coverage of the interval. At inference, arbitrary intrinsics are handled on the fly &mdash; continuous, interpolation-free, and without any external language model.</p>
   </section>
 
-  <section id="chart">
-    <h2 class="sec">Cross-Focal Performance at a Glance</h2>
-    <p class="just">AP<sub>3D</sub> (IoU &ge; 0.7) on KITTI Val at a seen anchor focal (700 px, hatched) versus an in-range interpolated focal (1200 px, solid), in the style of the teaser comparison &mdash; extended with <strong>MonoBEN</strong> on the right-hand side:</p>
-    <div class="chart-legend"><span><span class="key seen"></span>Seen Intrinsic (700px)</span><span><span class="key novel"></span>Interpolated Intrinsic (1200px)</span></div>
-    <div class="chart-body">
-      <div class="ytitle-col"><div class="ytitle">AP<sub>3D</sub> 70 &uarr;</div></div>
-      <div class="yaxis">
-        <div class="ytick" style="bottom:0.0%"><span>10</span></div>
-<div class="ytick" style="bottom:29.4%"><span>15</span></div>
-<div class="ytick" style="bottom:58.8%"><span>20</span></div>
-<div class="ytick" style="bottom:88.2%"><span>25</span></div>
-      </div>
-      <div class="plot">
-        <div class="gridline" style="bottom:0.0%"></div>
-<div class="gridline" style="bottom:29.4%"></div>
-<div class="gridline" style="bottom:58.8%"></div>
-<div class="gridline" style="bottom:88.2%"></div>
-        <div class="groups">
-<div class="group">
-      <div class="bar-col"><div class="bar-val">19.15</div><div class="bar seen" style="height:53.8%;background-color:#78849C"></div></div>
-      <div class="bar-col"><div class="bar-val">12.30</div><div class="bar unseen" style="height:13.5%;background-color:#D7DCE4"></div></div>
-    </div>
-<div class="group">
-      <div class="bar-col"><div class="bar-val">22.51</div><div class="bar seen" style="height:73.6%;background-color:#57A78C"></div></div>
-      <div class="bar-col"><div class="bar-val">12.43</div><div class="bar unseen" style="height:14.3%;background-color:#C2E2D5"></div></div>
-    </div>
-<div class="group">
-      <div class="bar-col"><div class="bar-val">23.88</div><div class="bar seen" style="height:81.6%;background-color:#9A5C8C"></div></div>
-      <div class="bar-col"><div class="bar-val">13.46</div><div class="bar unseen" style="height:20.4%;background-color:#DCBDD5"></div></div>
-    </div>
-<div class="group">
-      <div class="bar-col"><div class="bar-val">24.41</div><div class="bar seen" style="height:84.8%;background-color:#BE9826"></div></div>
-      <div class="bar-col"><div class="bar-val">20.54</div><div class="bar unseen" style="height:62.0%;background-color:#F0CD5E"></div></div>
-    </div>
-<div class="group ours">
-      <div class="bar-col"><div class="bar-val">24.20</div><div class="bar seen" style="height:83.5%;background-color:#4A7FB5"></div></div>
-      <div class="bar-col"><div class="bar-val">20.89</div><div class="bar unseen" style="height:64.1%;background-color:#B7CFE8"></div></div>
-    </div>
-        </div>
-      </div>
-    </div>
-    <div class="xlabels">
-<div class="xlabel">MonoDETR</div>
-<div class="xlabel">MonoDGP</div>
-<div class="xlabel">MonoCoP</div>
-<div class="xlabel"><strong>MonoIA</strong></div>
-<div class="xlabel"><strong>MonoBEN (Ours)</strong></div>
-    </div>
-    <p class="chart-note"><strong>A note on terminology.</strong> The teaser this chart follows labels 1200 px &ldquo;Unseen Intrinsic&rdquo;. That label is not technically accurate for MonoBEN: the 1200 px focal lies strictly inside the <em>f&prime; ~ U(700, 1300)</em> px range sampled during training, between the 1100 px and 1300 px discrete anchors. We therefore label it <strong>Interpolated Intrinsic (1200px)</strong> &mdash; in-distribution but off-anchor, so anchor-table methods must interpolate to reach it while MonoBEN evaluates it continuously. Provenance: MonoBEN 24.20 is the KITTI Val Moderate AP<sub>3D</sub> at the native camera (the 700 px bucket; the exact-700 px sweep point is 23.64); 20.89 is the 1200 px sweep point. All other bars are the exact 700 px / 1200 px sweep values from the Generalization table below.</p>
-  </section>
-
   <section id="generalization">
     <h2 class="sec">Generalization on Synthetic Intrinsics</h2>
     <p class="tabcap"><span class="tlabel">TABLE I:</span> Results on different focal lengths using AP<sub>3D</sub> (IoU &ge; 0.7) on KITTI Val. <span class="cb-anchor">Green</span> denotes predefined focal anchors seen by MonoIA. <span class="cb-interp">Blue</span> highlights the interpolated focal lengths where MonoBEN&rsquo;s continuous representation successfully outperforms MonoIA&rsquo;s discrete interpolation. <span class="cb-out">Orange</span> denotes out-of-range extrapolation (600, 650, 1350, 1400 px). &dagger; indicates results reproduced by us using the author-provided checkpoint and our implementation of their hybrid interpolation module (missing from the official source code).</p>
-    <div class="table-scroll"><table class="ieee-table focal-table">
+    <div class="table-figure" aria-hidden="true">
+      <img class="table-wide" src="static/images/focal_table_wide.svg" alt="">
+      <img class="table-medium" src="static/images/focal_table_medium.svg" alt="" loading="lazy">
+      <img class="table-small" src="static/images/focal_table_small.svg" alt="" loading="lazy">
+    </div>
+    <div class="sr-only"><table aria-label="TABLE I: Generalization on synthetic intrinsics" class="focal-table">
 <thead>
 <tr><th class="mhead" rowspan="2">Method</th><th colspan="2">Unseen Focals (px)</th><th colspan="13">Seen Focals (700&ndash;1300 px)</th><th colspan="2">Unseen Focals (px)</th><th rowspan="2">Avg</th></tr>
 <tr><th><span class="cb-out">600</span></th><th><span class="cb-out">650</span></th><th><span class="cb-anchor">700</span></th><th><span class="cb-interp">750</span></th><th><span class="cb-interp">800</span></th><th><span class="cb-interp">850</span></th><th><span class="cb-anchor">900</span></th><th><span class="cb-interp">950</span></th><th><span class="cb-interp">1000</span></th><th><span class="cb-interp">1050</span></th><th><span class="cb-anchor">1100</span></th><th><span class="cb-interp">1150</span></th><th><span class="cb-interp">1200</span></th><th><span class="cb-interp">1250</span></th><th><span class="cb-anchor">1300</span></th><th><span class="cb-out">1350</span></th><th><span class="cb-out">1400</span></th></tr>
@@ -185,7 +131,12 @@
   <section id="kitti">
     <h2 class="sec">Standard KITTI Results</h2>
     <p class="tabcap"><span class="tlabel">TABLE II:</span> KITTI Leaderboard (Test) and Val results at IoU<sub>3D</sub> &ge; 0.7. Methods utilizing extra data (LiDAR/Depth) are explicitly noted to ensure fair comparison.</p>
-    <div class="table-scroll"><table class="ieee-table kitti-table">
+    <div class="table-figure" aria-hidden="true">
+      <img class="table-wide" src="static/images/kitti_table_wide.svg" alt="">
+      <img class="table-medium" src="static/images/kitti_table_medium.svg" alt="" loading="lazy">
+      <img class="table-small" src="static/images/kitti_table_small.svg" alt="" loading="lazy">
+    </div>
+    <div class="sr-only"><table aria-label="TABLE II: Standard KITTI results" class="kitti-table">
 <thead>
 <tr><th rowspan="3">Method</th><th rowspan="3">Extra<br>Data</th><th colspan="6">KITTI Test</th><th colspan="6">KITTI Val</th></tr>
 <tr><th colspan="3">AP<sub>3D</sub> &uarr;</th><th colspan="3">AP<sub>BEV</sub> &uarr;</th><th colspan="3">AP<sub>3D</sub> &uarr;</th><th colspan="3">AP<sub>BEV</sub> &uarr;</th></tr>

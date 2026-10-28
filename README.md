@@ -15,9 +15,22 @@ Vietnam National University Ho Chi Minh City.
 
 The page is implemented in [`index.html`](index.html) and deployed directly via GitHub Pages:
 
+- Cross-Focal Performance at a Glance (850 px / 1400 px SVG chart)
 - Abstract
 - Overall Pipeline
-- Cross-Focal Performance at a Glance (HTML bar chart)
 - Generalization on Synthetic Intrinsics
 - Standard KITTI Results
 - Analytic
+
+Accepted at **RIVF 2026**.
+
+The vector tables are generated from `static/tabels/focal_gen.tex` and
+`static/tabels/kitti_main_result.tex`. Desktop, tablet, and mobile versions use
+15 px text; narrower versions stack column groups to avoid horizontal scrolling.
+To regenerate the tables and chart (Python with matplotlib):
+
+```sh
+MPLCONFIGDIR=/tmp/monoben-matplotlib python static/tabels/render_assets.py
+```
+
+When changing table data, also update the accessible HTML tables in `index.html`.

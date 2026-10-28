@@ -1,0 +1,288 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="2198" viewBox="0 0 280 2198">
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="Times New Roman, Nimbus Roman, Times, serif" font-size="15" fill="#111">
+<path d="M0 1H280" stroke="#111" stroke-width="1.4"/>
+<text x="8" y="49" text-anchor="start">Method</text>
+<text x="8" y="68" text-anchor="start">(extra data)</text>
+<path d="M136 1V529" stroke="#111" stroke-width="0.65"/>
+<text x="208" y="26" text-anchor="middle">KITTI Test</text>
+<text x="208" y="45" text-anchor="middle">AP<tspan baseline-shift="sub" font-size="11">3D</tspan> ↑</text>
+<path d="M136 54H280" stroke="#111" stroke-width="0.65"/>
+<text x="160" y="77" text-anchor="middle">Easy</text>
+<text x="208" y="77" text-anchor="middle">Mod.</text>
+<text x="256" y="77" text-anchor="middle">Hard</text>
+<path d="M0 89H280" stroke="#111" stroke-width="1"/>
+<text x="8" y="105" text-anchor="start">OccupancyM3D</text>
+<text x="8" y="123" text-anchor="start">Extra: LiDAR</text>
+<text x="160" y="114" text-anchor="middle">25.55</text>
+<text x="208" y="114" text-anchor="middle">17.02</text>
+<text x="256" y="114" text-anchor="middle">14.79</text>
+<text x="8" y="145" text-anchor="start">OPA-3D</text>
+<text x="8" y="163" text-anchor="start">Extra: Depth</text>
+<text x="160" y="154" text-anchor="middle">24.68</text>
+<text x="208" y="154" text-anchor="middle">17.17</text>
+<text x="256" y="154" text-anchor="middle">14.14</text>
+<text x="8" y="185" text-anchor="start">MonoTAKD</text>
+<text x="8" y="203" text-anchor="start">Extra: LiDAR</text>
+<text x="160" y="194" text-anchor="middle">27.91</text>
+<text x="208" y="194" text-anchor="middle">19.43</text>
+<text x="256" y="194" text-anchor="middle">16.51</text>
+<text x="8" y="225" text-anchor="start">MonoUNI</text>
+<text x="8" y="243" text-anchor="start">Extra: None</text>
+<path d="M0 209H280" stroke="#111" stroke-width="0.65"/>
+<text x="160" y="234" text-anchor="middle">24.75</text>
+<text x="208" y="234" text-anchor="middle">16.73</text>
+<text x="256" y="234" text-anchor="middle">13.49</text>
+<text x="8" y="265" text-anchor="start">MonoDETR</text>
+<text x="8" y="283" text-anchor="start">Extra: None</text>
+<text x="160" y="274" text-anchor="middle">25.00</text>
+<text x="208" y="274" text-anchor="middle">16.47</text>
+<text x="256" y="274" text-anchor="middle">13.58</text>
+<text x="8" y="305" text-anchor="start">MonoCD</text>
+<text x="8" y="323" text-anchor="start">Extra: None</text>
+<text x="160" y="314" text-anchor="middle">25.53</text>
+<text x="208" y="314" text-anchor="middle">16.59</text>
+<text x="256" y="314" text-anchor="middle">14.53</text>
+<text x="8" y="345" text-anchor="start">MonoMAE</text>
+<text x="8" y="363" text-anchor="start">Extra: None</text>
+<text x="160" y="354" text-anchor="middle">25.60</text>
+<text x="208" y="354" text-anchor="middle">18.84</text>
+<text x="256" y="354" text-anchor="middle">16.78</text>
+<path d="M239.125 356.5H272.875" stroke="#111" stroke-width="0.7"/>
+<text x="8" y="385" text-anchor="start">MonoDGP</text>
+<text x="8" y="403" text-anchor="start">Extra: None</text>
+<text x="160" y="394" text-anchor="middle">26.35</text>
+<text x="208" y="394" text-anchor="middle">18.72</text>
+<text x="256" y="394" text-anchor="middle">15.97</text>
+<text x="8" y="425" text-anchor="start">MonoCoP</text>
+<text x="8" y="443" text-anchor="start">Extra: None</text>
+<text x="160" y="434" text-anchor="middle">27.54</text>
+<text x="208" y="434" text-anchor="middle">19.11</text>
+<text x="256" y="434" text-anchor="middle">16.33</text>
+<text x="8" y="465" text-anchor="start">MonoIA</text>
+<text x="8" y="483" text-anchor="start">Extra: None</text>
+<text x="160" y="474" text-anchor="middle" font-weight="bold">29.52</text>
+<text x="208" y="474" text-anchor="middle" font-weight="bold">20.29</text>
+<text x="256" y="474" text-anchor="middle" font-weight="bold">17.93</text>
+<text x="8" y="505" text-anchor="start" font-weight="bold">MonoBEN</text>
+<text x="8" y="523" text-anchor="start">Extra: None</text>
+<text x="160" y="514" text-anchor="middle">28.60</text>
+<path d="M143.125 516.5H176.875" stroke="#111" stroke-width="0.7"/>
+<text x="208" y="514" text-anchor="middle">19.42</text>
+<path d="M191.125 516.5H224.875" stroke="#111" stroke-width="0.7"/>
+<text x="256" y="514" text-anchor="middle">16.64</text>
+<path d="M0 529H280" stroke="#111" stroke-width="1.4"/>
+<path d="M0 557H280" stroke="#111" stroke-width="1.4"/>
+<text x="8" y="605" text-anchor="start">Method</text>
+<text x="8" y="624" text-anchor="start">(extra data)</text>
+<path d="M136 557V1085" stroke="#111" stroke-width="0.65"/>
+<text x="208" y="582" text-anchor="middle">KITTI Test</text>
+<text x="208" y="601" text-anchor="middle">AP<tspan baseline-shift="sub" font-size="11">BEV</tspan> ↑</text>
+<path d="M136 610H280" stroke="#111" stroke-width="0.65"/>
+<text x="160" y="633" text-anchor="middle">Easy</text>
+<text x="208" y="633" text-anchor="middle">Mod.</text>
+<text x="256" y="633" text-anchor="middle">Hard</text>
+<path d="M0 645H280" stroke="#111" stroke-width="1"/>
+<text x="8" y="661" text-anchor="start">OccupancyM3D</text>
+<text x="8" y="679" text-anchor="start">Extra: LiDAR</text>
+<text x="160" y="670" text-anchor="middle">35.38</text>
+<text x="208" y="670" text-anchor="middle">24.18</text>
+<text x="256" y="670" text-anchor="middle">21.37</text>
+<text x="8" y="701" text-anchor="start">OPA-3D</text>
+<text x="8" y="719" text-anchor="start">Extra: Depth</text>
+<text x="160" y="710" text-anchor="middle">32.50</text>
+<text x="208" y="710" text-anchor="middle">23.14</text>
+<text x="256" y="710" text-anchor="middle">20.30</text>
+<text x="8" y="741" text-anchor="start">MonoTAKD</text>
+<text x="8" y="759" text-anchor="start">Extra: LiDAR</text>
+<text x="160" y="750" text-anchor="middle">38.75</text>
+<text x="208" y="750" text-anchor="middle">27.76</text>
+<text x="256" y="750" text-anchor="middle">24.14</text>
+<text x="8" y="781" text-anchor="start">MonoUNI</text>
+<text x="8" y="799" text-anchor="start">Extra: None</text>
+<path d="M0 765H280" stroke="#111" stroke-width="0.65"/>
+<text x="160" y="790" text-anchor="middle">–</text>
+<text x="208" y="790" text-anchor="middle">–</text>
+<text x="256" y="790" text-anchor="middle">–</text>
+<text x="8" y="821" text-anchor="start">MonoDETR</text>
+<text x="8" y="839" text-anchor="start">Extra: None</text>
+<text x="160" y="830" text-anchor="middle">33.60</text>
+<text x="208" y="830" text-anchor="middle">22.11</text>
+<text x="256" y="830" text-anchor="middle">18.60</text>
+<text x="8" y="861" text-anchor="start">MonoCD</text>
+<text x="8" y="879" text-anchor="start">Extra: None</text>
+<text x="160" y="870" text-anchor="middle">33.41</text>
+<text x="208" y="870" text-anchor="middle">22.81</text>
+<text x="256" y="870" text-anchor="middle">19.57</text>
+<text x="8" y="901" text-anchor="start">MonoMAE</text>
+<text x="8" y="919" text-anchor="start">Extra: None</text>
+<text x="160" y="910" text-anchor="middle">34.15</text>
+<text x="208" y="910" text-anchor="middle">24.93</text>
+<text x="256" y="910" text-anchor="middle">21.76</text>
+<text x="8" y="941" text-anchor="start">MonoDGP</text>
+<text x="8" y="959" text-anchor="start">Extra: None</text>
+<text x="160" y="950" text-anchor="middle">35.24</text>
+<text x="208" y="950" text-anchor="middle">25.23</text>
+<text x="256" y="950" text-anchor="middle">22.02</text>
+<text x="8" y="981" text-anchor="start">MonoCoP</text>
+<text x="8" y="999" text-anchor="start">Extra: None</text>
+<text x="160" y="990" text-anchor="middle">36.77</text>
+<text x="208" y="990" text-anchor="middle">25.57</text>
+<text x="256" y="990" text-anchor="middle">22.62</text>
+<text x="8" y="1021" text-anchor="start">MonoIA</text>
+<text x="8" y="1039" text-anchor="start">Extra: None</text>
+<text x="160" y="1030" text-anchor="middle">37.55</text>
+<path d="M143.125 1032.5H176.875" stroke="#111" stroke-width="0.7"/>
+<text x="208" y="1030" text-anchor="middle" font-weight="bold">26.59</text>
+<text x="256" y="1030" text-anchor="middle" font-weight="bold">23.26</text>
+<text x="8" y="1061" text-anchor="start" font-weight="bold">MonoBEN</text>
+<text x="8" y="1079" text-anchor="start">Extra: None</text>
+<text x="160" y="1070" text-anchor="middle" font-weight="bold">37.69</text>
+<text x="208" y="1070" text-anchor="middle">25.98</text>
+<path d="M191.125 1072.5H224.875" stroke="#111" stroke-width="0.7"/>
+<text x="256" y="1070" text-anchor="middle">22.89</text>
+<path d="M239.125 1072.5H272.875" stroke="#111" stroke-width="0.7"/>
+<path d="M0 1085H280" stroke="#111" stroke-width="1.4"/>
+<path d="M0 1113H280" stroke="#111" stroke-width="1.4"/>
+<text x="8" y="1161" text-anchor="start">Method</text>
+<text x="8" y="1180" text-anchor="start">(extra data)</text>
+<path d="M136 1113V1641" stroke="#111" stroke-width="0.65"/>
+<text x="208" y="1138" text-anchor="middle">KITTI Val</text>
+<text x="208" y="1157" text-anchor="middle">AP<tspan baseline-shift="sub" font-size="11">3D</tspan> ↑</text>
+<path d="M136 1166H280" stroke="#111" stroke-width="0.65"/>
+<text x="160" y="1189" text-anchor="middle">Easy</text>
+<text x="208" y="1189" text-anchor="middle">Mod.</text>
+<text x="256" y="1189" text-anchor="middle">Hard</text>
+<path d="M0 1201H280" stroke="#111" stroke-width="1"/>
+<text x="8" y="1217" text-anchor="start">OccupancyM3D</text>
+<text x="8" y="1235" text-anchor="start">Extra: LiDAR</text>
+<text x="160" y="1226" text-anchor="middle">26.87</text>
+<text x="208" y="1226" text-anchor="middle">19.96</text>
+<text x="256" y="1226" text-anchor="middle">17.15</text>
+<text x="8" y="1257" text-anchor="start">OPA-3D</text>
+<text x="8" y="1275" text-anchor="start">Extra: Depth</text>
+<text x="160" y="1266" text-anchor="middle">24.97</text>
+<text x="208" y="1266" text-anchor="middle">19.40</text>
+<text x="256" y="1266" text-anchor="middle">16.59</text>
+<text x="8" y="1297" text-anchor="start">MonoTAKD</text>
+<text x="8" y="1315" text-anchor="start">Extra: LiDAR</text>
+<text x="160" y="1306" text-anchor="middle">34.36</text>
+<text x="208" y="1306" text-anchor="middle">22.61</text>
+<text x="256" y="1306" text-anchor="middle">19.88</text>
+<text x="8" y="1337" text-anchor="start">MonoUNI</text>
+<text x="8" y="1355" text-anchor="start">Extra: None</text>
+<path d="M0 1321H280" stroke="#111" stroke-width="0.65"/>
+<text x="160" y="1346" text-anchor="middle">24.51</text>
+<text x="208" y="1346" text-anchor="middle">17.18</text>
+<text x="256" y="1346" text-anchor="middle">14.01</text>
+<text x="8" y="1377" text-anchor="start">MonoDETR</text>
+<text x="8" y="1395" text-anchor="start">Extra: None</text>
+<text x="160" y="1386" text-anchor="middle">28.84</text>
+<text x="208" y="1386" text-anchor="middle">20.61</text>
+<text x="256" y="1386" text-anchor="middle">16.38</text>
+<text x="8" y="1417" text-anchor="start">MonoCD</text>
+<text x="8" y="1435" text-anchor="start">Extra: None</text>
+<text x="160" y="1426" text-anchor="middle">26.45</text>
+<text x="208" y="1426" text-anchor="middle">19.37</text>
+<text x="256" y="1426" text-anchor="middle">16.38</text>
+<text x="8" y="1457" text-anchor="start">MonoMAE</text>
+<text x="8" y="1475" text-anchor="start">Extra: None</text>
+<text x="160" y="1466" text-anchor="middle">30.29</text>
+<text x="208" y="1466" text-anchor="middle">20.90</text>
+<text x="256" y="1466" text-anchor="middle">17.61</text>
+<text x="8" y="1497" text-anchor="start">MonoDGP</text>
+<text x="8" y="1515" text-anchor="start">Extra: None</text>
+<text x="160" y="1506" text-anchor="middle">30.76</text>
+<text x="208" y="1506" text-anchor="middle">22.34</text>
+<text x="256" y="1506" text-anchor="middle">19.02</text>
+<text x="8" y="1537" text-anchor="start">MonoCoP</text>
+<text x="8" y="1555" text-anchor="start">Extra: None</text>
+<text x="160" y="1546" text-anchor="middle">32.06</text>
+<text x="208" y="1546" text-anchor="middle">23.98</text>
+<text x="256" y="1546" text-anchor="middle">20.64</text>
+<text x="8" y="1577" text-anchor="start">MonoIA</text>
+<text x="8" y="1595" text-anchor="start">Extra: None</text>
+<text x="160" y="1586" text-anchor="middle" font-weight="bold">33.61</text>
+<text x="208" y="1586" text-anchor="middle" font-weight="bold">24.40</text>
+<text x="256" y="1586" text-anchor="middle" font-weight="bold">20.80</text>
+<text x="8" y="1617" text-anchor="start" font-weight="bold">MonoBEN</text>
+<text x="8" y="1635" text-anchor="start">Extra: None</text>
+<text x="160" y="1626" text-anchor="middle">33.01</text>
+<path d="M143.125 1628.5H176.875" stroke="#111" stroke-width="0.7"/>
+<text x="208" y="1626" text-anchor="middle">24.20</text>
+<path d="M191.125 1628.5H224.875" stroke="#111" stroke-width="0.7"/>
+<text x="256" y="1626" text-anchor="middle">20.76</text>
+<path d="M239.125 1628.5H272.875" stroke="#111" stroke-width="0.7"/>
+<path d="M0 1641H280" stroke="#111" stroke-width="1.4"/>
+<path d="M0 1669H280" stroke="#111" stroke-width="1.4"/>
+<text x="8" y="1717" text-anchor="start">Method</text>
+<text x="8" y="1736" text-anchor="start">(extra data)</text>
+<path d="M136 1669V2197" stroke="#111" stroke-width="0.65"/>
+<text x="208" y="1694" text-anchor="middle">KITTI Val</text>
+<text x="208" y="1713" text-anchor="middle">AP<tspan baseline-shift="sub" font-size="11">BEV</tspan> ↑</text>
+<path d="M136 1722H280" stroke="#111" stroke-width="0.65"/>
+<text x="160" y="1745" text-anchor="middle">Easy</text>
+<text x="208" y="1745" text-anchor="middle">Mod.</text>
+<text x="256" y="1745" text-anchor="middle">Hard</text>
+<path d="M0 1757H280" stroke="#111" stroke-width="1"/>
+<text x="8" y="1773" text-anchor="start">OccupancyM3D</text>
+<text x="8" y="1791" text-anchor="start">Extra: LiDAR</text>
+<text x="160" y="1782" text-anchor="middle">35.72</text>
+<text x="208" y="1782" text-anchor="middle">26.60</text>
+<text x="256" y="1782" text-anchor="middle">23.68</text>
+<text x="8" y="1813" text-anchor="start">OPA-3D</text>
+<text x="8" y="1831" text-anchor="start">Extra: Depth</text>
+<text x="160" y="1822" text-anchor="middle">33.80</text>
+<text x="208" y="1822" text-anchor="middle">25.51</text>
+<text x="256" y="1822" text-anchor="middle">22.13</text>
+<text x="8" y="1853" text-anchor="start">MonoTAKD</text>
+<text x="8" y="1871" text-anchor="start">Extra: LiDAR</text>
+<text x="160" y="1862" text-anchor="middle">42.86</text>
+<text x="208" y="1862" text-anchor="middle">29.41</text>
+<text x="256" y="1862" text-anchor="middle">26.47</text>
+<text x="8" y="1893" text-anchor="start">MonoUNI</text>
+<text x="8" y="1911" text-anchor="start">Extra: None</text>
+<path d="M0 1877H280" stroke="#111" stroke-width="0.65"/>
+<text x="160" y="1902" text-anchor="middle">–</text>
+<text x="208" y="1902" text-anchor="middle">–</text>
+<text x="256" y="1902" text-anchor="middle">–</text>
+<text x="8" y="1933" text-anchor="start">MonoDETR</text>
+<text x="8" y="1951" text-anchor="start">Extra: None</text>
+<text x="160" y="1942" text-anchor="middle">37.86</text>
+<text x="208" y="1942" text-anchor="middle">26.95</text>
+<text x="256" y="1942" text-anchor="middle">22.80</text>
+<text x="8" y="1973" text-anchor="start">MonoCD</text>
+<text x="8" y="1991" text-anchor="start">Extra: None</text>
+<text x="160" y="1982" text-anchor="middle">34.60</text>
+<text x="208" y="1982" text-anchor="middle">24.96</text>
+<text x="256" y="1982" text-anchor="middle">21.51</text>
+<text x="8" y="2013" text-anchor="start">MonoMAE</text>
+<text x="8" y="2031" text-anchor="start">Extra: None</text>
+<text x="160" y="2022" text-anchor="middle">40.26</text>
+<text x="208" y="2022" text-anchor="middle">27.08</text>
+<text x="256" y="2022" text-anchor="middle">23.14</text>
+<text x="8" y="2053" text-anchor="start">MonoDGP</text>
+<text x="8" y="2071" text-anchor="start">Extra: None</text>
+<text x="160" y="2062" text-anchor="middle">39.40</text>
+<text x="208" y="2062" text-anchor="middle">28.20</text>
+<text x="256" y="2062" text-anchor="middle">24.42</text>
+<text x="8" y="2093" text-anchor="start">MonoCoP</text>
+<text x="8" y="2111" text-anchor="start">Extra: None</text>
+<text x="160" y="2102" text-anchor="middle">42.20</text>
+<text x="208" y="2102" text-anchor="middle">31.29</text>
+<path d="M191.125 2104.5H224.875" stroke="#111" stroke-width="0.7"/>
+<text x="256" y="2102" text-anchor="middle">27.58</text>
+<path d="M239.125 2104.5H272.875" stroke="#111" stroke-width="0.7"/>
+<text x="8" y="2133" text-anchor="start">MonoIA</text>
+<text x="8" y="2151" text-anchor="start">Extra: None</text>
+<text x="160" y="2142" text-anchor="middle" font-weight="bold">44.69</text>
+<text x="208" y="2142" text-anchor="middle" font-weight="bold">32.17</text>
+<text x="256" y="2142" text-anchor="middle" font-weight="bold">27.93</text>
+<text x="8" y="2173" text-anchor="start" font-weight="bold">MonoBEN</text>
+<text x="8" y="2191" text-anchor="start">Extra: None</text>
+<text x="160" y="2182" text-anchor="middle">42.24</text>
+<path d="M143.125 2184.5H176.875" stroke="#111" stroke-width="0.7"/>
+<text x="208" y="2182" text-anchor="middle">31.10</text>
+<text x="256" y="2182" text-anchor="middle">27.37</text>
+<path d="M0 2197H280" stroke="#111" stroke-width="1.4"/>
+</g></svg>
